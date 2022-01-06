@@ -236,8 +236,8 @@ MonoBehaviour:
   minimumJumpHeight: 0.8
   wallRunGravity: 1
   wallRunJumpForce: 200
-  fov: 90
-  wallRunFOV: 110
+  fov: 60
+  wallRunFOV: 70
   wallRunFOVTime: 20
   camTilt: 10
   camTiltTime: 0.4

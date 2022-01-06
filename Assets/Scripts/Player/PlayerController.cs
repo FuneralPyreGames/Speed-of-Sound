@@ -94,12 +94,12 @@ public class PlayerController : MonoBehaviour
         wallForward = Physics.Raycast(transform.position, orientation.forward, wallDistance);
         if (CanWallRun())
         {
-            if (wallForward)
-            {
-                rb.useGravity = true;
-                rb.AddForce(Vector3.down/2, ForceMode.Impulse);
-                return;
-            }
+            //if (wallForward)
+            //{
+                //rb.useGravity = true;
+                //rb.AddForce(Vector3.down/2, ForceMode.Impulse);
+                //return;
+            //}
             if (wallLeft)
             {
                 StartWallRun();
@@ -228,6 +228,8 @@ public class PlayerController : MonoBehaviour
             elapsedTime += Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string timePlayingStr = timePlaying.ToString("mm':'ss'.'ff");
+            string timePlayingUneditedStr = timePlaying.ToString();
+            Debug.Log(timePlayingUneditedStr);
             timerText.text = timePlayingStr;
             yield return null;
         }
