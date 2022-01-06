@@ -141,6 +141,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""25a343ef-35fc-4b08-8d17-9c134af587f4"",
+                    ""path"": ""<Keyboard>/rightCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard And Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""2D Vector"",
                     ""id"": ""4d097977-14f2-4c85-ada7-920822671144"",
                     ""path"": ""2DVector"",
