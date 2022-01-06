@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/(5) Joy Division or Bonus Levels/TestLevel.unity
     guid: 031089070f7ad47859942282e94e279b
+  - enabled: 1
+    path: Assets/Scenes/Levels/(1) Racecar Division/Level 1 - Starting Out.unity
+    guid: ab5f5fdac4c864ace8ff2d51a7cc1dab
   m_configObjects: {}
