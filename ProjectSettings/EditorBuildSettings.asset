@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menus.unity
+    path: Assets/Scenes/Main Menu.unity
     guid: ab78fe0ee37a64e63873bd6ca8cdbef3
   - enabled: 1
-    path: Assets/Scenes/Levels/TestLevel.unity
+    path: Assets/Scenes/Levels/(5) Joy Division or Bonus Levels/TestLevel.unity
     guid: 031089070f7ad47859942282e94e279b
   m_configObjects: {}
