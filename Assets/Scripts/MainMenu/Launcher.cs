@@ -1,0 +1,111 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using TMPro;
+
+public class Launcher : MonoBehaviourPunCallbacks
+{
+    public MenuTweening menuTweening;
+    [SerializeField] TMP_InputField nicknameInputField;
+    [SerializeField] TMP_InputField roomNameInputField;
+    [SerializeField] TMP_Text roomNameText;
+    [SerializeField] GameObject startGameButton;
+    [SerializeField] Transform roomListContent;
+    [SerializeField] GameObject roomListItemPrefab;
+    [SerializeField] TMP_Text playerOneName;
+    [SerializeField] TMP_Text playerTwoName;
+    public void Connect()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+    }
+    public void Disconnect()
+    {
+        PhotonNetwork.Disconnect();
+    }
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        menuTweening.ConnectionMenuToMainMenu();
+    }
+    public override void OnConnectedToMaster()
+    {
+        PhotonNetwork.JoinLobby();
+        PhotonNetwork.AutomaticallySyncScene = true;
+    }
+    public override void OnJoinedLobby()
+    {
+        menuTweening.ConnectingOverlayToConnectionMenu();
+    }
+    public void SetNickname()
+    {
+        PhotonNetwork.NickName = nicknameInputField.text;
+    }
+    public void CreateRoom()
+    {
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = 2;
+        PhotonNetwork.CreateRoom(roomNameInputField.text, roomOptions);
+    }
+    public void LeaveRoom()
+    {
+        PhotonNetwork.LeaveRoom();
+        menuTweening.TweenRoomMenuToConnectionMenu();
+    }
+    public override void OnJoinedRoom()
+    {
+        if(PhotonNetwork.IsMasterClient)
+        {
+            playerOneName.text = PhotonNetwork.NickName;
+        }
+        else
+        {
+            playerOneName.text = PhotonNetwork.MasterClient.NickName;
+            playerTwoName.text = PhotonNetwork.NickName;
+        }
+        roomNameText.text = PhotonNetwork.CurrentRoom.Name;
+        startGameButton.SetActive(PhotonNetwork.IsMasterClient);
+        menuTweening.TweenCreateRoomToRoomMenu();
+        
+    }
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        if(newPlayer.IsMasterClient)
+        {
+            playerOneName.text = newPlayer.NickName;
+        }
+        else
+        {
+            playerTwoName.text = newPlayer.NickName;
+        }
+    }
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        startGameButton.SetActive(PhotonNetwork.IsMasterClient);
+    }
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        foreach(Transform trans in roomListContent)
+        {
+            Destroy(trans.gameObject);
+        }
+        for(int i= 0; i < roomList.Count; i++)
+        {
+            if(roomList[i].RemovedFromList)
+            {
+                continue;
+            }
+            Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().Setup(roomList[i]);
+        }
+    }
+    public void JoinRoom(RoomInfo info)
+    {
+        PhotonNetwork.JoinRoom(info.Name);
+        menuTweening.TweenFindRoomToRoomMenu();        
+        startGameButton.SetActive(PhotonNetwork.IsMasterClient);
+    }
+    public void StartGame()
+    {
+        PhotonNetwork.LoadLevel("TestLevel");
+    }
+}
