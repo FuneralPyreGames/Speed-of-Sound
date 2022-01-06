@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
 {
     PhotonView PV;
     GameObject playerController;
+    SpawnManager spawnManager;
+    Transform spawnpoint;
     void Awake()
     {
         PV = GetComponent<PhotonView>();
@@ -21,6 +23,16 @@ public class PlayerManager : MonoBehaviour
     }
     void CreateController()
     {
-        playerController = PhotonNetwork.Instantiate("PlayerController", Vector3.zero, Quaternion.identity);
+        spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        SpawnPoint[] spawnPoints = spawnManager.GetSpawnPoint();
+        if(PhotonNetwork.IsMasterClient)
+        {
+            spawnpoint = spawnPoints[0].transform;
+        }
+        else if (!PhotonNetwork.IsMasterClient)
+        {
+            spawnpoint = spawnPoints[1].transform;
+        }
+        playerController = PhotonNetwork.Instantiate("PlayerController", spawnpoint.position, spawnpoint.rotation);
     }
 }
