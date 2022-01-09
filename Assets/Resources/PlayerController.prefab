@@ -461,6 +461,8 @@ MonoBehaviour:
   grounded: 0
   timerText: {fileID: 6105985731688836303}
   timerUI: {fileID: 6293550089348643717}
+  totalSeconds: 0
+  timePlayingStr: 
 --- !u!54 &4237956333970964751
 Rigidbody:
   m_ObjectHideFlags: 0

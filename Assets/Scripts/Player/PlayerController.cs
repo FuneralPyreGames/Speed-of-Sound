@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     float elapsedTime;
     private bool timerGoing = false;
     private TimeSpan timePlaying;
+    public int totalSeconds;
+    public string timePlayingStr;
 
     void Awake()
     {
@@ -227,9 +229,9 @@ public class PlayerController : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
-            string timePlayingStr = timePlaying.ToString("mm':'ss'.'ff");
-            string timePlayingUneditedStr = timePlaying.ToString();
-            Debug.Log(timePlayingUneditedStr);
+            timePlayingStr = timePlaying.ToString("mm':'ss'.'ff");
+            totalSeconds = (int)timePlaying.TotalSeconds;
+            Debug.Log(totalSeconds);
             timerText.text = timePlayingStr;
             yield return null;
         }
@@ -237,6 +239,7 @@ public class PlayerController : MonoBehaviour
     public void StopTimer()
     {
         timerGoing = false;
+        timerUI.SetActive(false);
     }
     public void ExitLevel()
     {

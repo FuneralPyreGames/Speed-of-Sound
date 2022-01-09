@@ -10,10 +10,10 @@ public class LevelSelectMenu : MonoBehaviour
     public GameObject racecarDivision;
     private void Awake()
     {
-        //if (PhotonNetwork.IsMasterClient)
-        //{
+        if (PhotonNetwork.IsMasterClient)
+        {
             LeanTween.moveLocalY(divisionChoice, 0, 1f);
-        //}
+        }
     }
     public void OpenRacecarDivision()
     {
@@ -24,5 +24,13 @@ public class LevelSelectMenu : MonoBehaviour
     {
         LeanTween.moveLocalY(divisionChoice, 0, .35f);
         LeanTween.moveLocalX(racecarDivision, -2000, .35f);
+    }
+    public void LoadLevel1()
+    {
+        PhotonNetwork.LoadLevel("Level 1 - Starting Out");
+    }
+    public void LoadLevel2()
+    {
+        PhotonNetwork.LoadLevel("Level 2 - Through The Walls");
     }
 }

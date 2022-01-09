@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/Menus/Main Menu.unity
     guid: ab78fe0ee37a64e63873bd6ca8cdbef3
   - enabled: 1
-    path: Assets/Scenes/Levels/(5) Joy Division or Bonus Levels/TestLevel.unity
-    guid: 031089070f7ad47859942282e94e279b
+    path: Assets/Scenes/Menus/LevelSelectMenu.unity
+    guid: 402545adc46966f4b8ae0dbc31419fa2
   - enabled: 1
     path: Assets/Scenes/Levels/(1) Racecar Division/Level 1 - Starting Out.unity
     guid: ab5f5fdac4c864ace8ff2d51a7cc1dab
+  - enabled: 1
+    path: Assets/Scenes/Levels/(1) Racecar Division/Level 2- Through The Walls.unity
+    guid: c9c76e3d8c9fa4d3ebd18bc4ef24f895
+  - enabled: 1
+    path: Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods.unity
+    guid: 99e9b858c651b47f8b1a9a13d1e5d2a2
+  - enabled: 1
+    path: Assets/Scenes/Levels/(5) Joy Division or Bonus Levels/TestLevel.unity
+    guid: 031089070f7ad47859942282e94e279b
   m_configObjects: {}

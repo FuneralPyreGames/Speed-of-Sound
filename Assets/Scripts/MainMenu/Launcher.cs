@@ -106,6 +106,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public void StartGame()
     {
-        PhotonNetwork.LoadLevel("Level 1 - Starting Out");
+        PhotonNetwork.LoadLevel("LevelSelectMenu");
     }
 }

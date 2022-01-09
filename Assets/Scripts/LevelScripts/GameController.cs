@@ -1,18 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
-
+using TMPro;
 public class GameController : MonoBehaviour
 {
+    public int currentLevel;
     public GameObject[] playerControllers;
     public PlayerController firstPlayerControllerComponents, secondPlayerControllerComponents, sortPlayerControllerComponents;
     public bool gameStarted = false;
     public bool playerOneExited, playerTwoExited;
     public int isLocalPlayer;
     public GameObject playerOneExitCheck, playerTwoExitCheck, playerOneLevelFinishUI, playerTwoLevelFinishUI;
+    string timerString;
+    string rankEarned;
+    int secondsToComplete;
+    int starsEarned;
+    StarTracker starTracker;
+    public TMP_Text playerOneEndLevelTimerString, playerOneEndLevelRankString, playerOneEndLevelStarsString, playerTwoEndLevelTimerString, playerTwoEndLevelRankString, playerTwoEndLevelStarsString;
+    [Header("Times")]
+    public int platinumTime;
+    public int goldTime;
+    public int silverTime;
+    public int bronzeTime;
+    public int participationTime;
     PhotonView PV;
     void Awake()
     {
@@ -98,7 +112,7 @@ public class GameController : MonoBehaviour
         }
         if (playerOneExited && playerTwoExited)
         {
-            EndGame();
+            CalculateStars();
         }
     }
     public void PlayerOneExitedLevel()
@@ -109,20 +123,112 @@ public class GameController : MonoBehaviour
     {
         PV.RPC("RPC_PlayerTwoExitedLevel", RpcTarget.All);
     }
+    public void CalculateStars()
+    {
+        if(PhotonNetwork.IsMasterClient)
+        {
+            firstPlayerControllerComponents.StopTimer();
+            secondsToComplete = firstPlayerControllerComponents.totalSeconds;
+            timerString = firstPlayerControllerComponents.timePlayingStr;
+            if(secondsToComplete - platinumTime <= 0)
+            {
+                starsEarned = 5;
+                rankEarned = "Platinum";
+            }
+            else if(secondsToComplete - goldTime <= 0)
+            {
+                starsEarned = 4;
+                rankEarned = "Gold";
+            }
+            else if(secondsToComplete - silverTime <= 0)
+            {
+                starsEarned = 3;
+                rankEarned = "Silver";
+            }
+            else if(secondsToComplete - bronzeTime <= 0)
+            {
+                starsEarned = 2;
+                rankEarned = "Bronze";
+            }
+            else if(secondsToComplete - participationTime <= 0)
+            {
+                starsEarned = 1;
+                rankEarned = "Participation";
+            }
+            else
+            {
+                starsEarned = 0;
+                rankEarned = "Try Again";
+            }
+            PV.RPC("RPC_CommunicateTime", RpcTarget.All, rankEarned, timerString, starsEarned);
+        }
+        if(!PhotonNetwork.IsMasterClient)
+        {
+            secondPlayerControllerComponents.StopTimer();
+        }
+    }
     public void EndGame()
     {
         if(PhotonNetwork.IsMasterClient)
         {
+            playerOneEndLevelTimerString.text = "Time- " + timerString;
+            playerOneEndLevelStarsString.text = "Stars- " + starsEarned.ToString() + " Stars";
+            playerOneEndLevelRankString.text = "Rank- " + rankEarned;
             playerOneLevelFinishUI.SetActive(true);
-            firstPlayerControllerComponents.StopTimer();
-            firstPlayerControllerComponents.timerUI.SetActive(false);
+            TrackStars();
         }
         if(!PhotonNetwork.IsMasterClient)
         {
+            playerTwoEndLevelTimerString.text = "Time- " + timerString;
+            playerTwoEndLevelStarsString.text = "Stars- " + starsEarned.ToString() + " Stars";
+            playerTwoEndLevelRankString.text = "Rank- " + rankEarned;
             playerTwoLevelFinishUI.SetActive(true);
-            secondPlayerControllerComponents.StopTimer();
-            secondPlayerControllerComponents.timerUI.SetActive(false);
         }
+    }
+    void TrackStars()
+    {
+        starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
+        switch(currentLevel)
+        {
+            case 1:
+                starTracker.level1Stars = starsEarned;
+                return;
+            case 2:
+                starTracker.level2Stars = starsEarned;
+                return;
+            case 3:
+                starTracker.level3Stars = starsEarned;
+                return;
+            case 4:
+                starTracker.level4Stars = starsEarned;
+                return;
+            case 5:
+                starTracker.level5Stars = starsEarned;
+                return;
+            case 6:
+                starTracker.level6Stars = starsEarned;
+                return;
+            case 7:
+                starTracker.level7Stars = starsEarned;
+                return;
+            case 8:
+                starTracker.level8Stars = starsEarned;
+                return;
+            case 9:
+                starTracker.level9Stars = starsEarned;
+                return;
+            case 10:
+                starTracker.level10Stars = starsEarned;
+                return;
+        }
+    }
+    [PunRPC]
+    void RPC_CommunicateTime(string Rank, string Timer, int Stars)
+    {
+        rankEarned = Rank;
+        timerString = Timer;
+        starsEarned = Stars;
+        EndGame();
     }
     [PunRPC]
     void RPC_PlayerOneExitedLevel()
@@ -141,5 +247,9 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         GetPlayerControllers();
+    }
+    public void ExitLevel()
+    {
+        PhotonNetwork.LoadLevel("LevelSelectMenu");
     }
 }
