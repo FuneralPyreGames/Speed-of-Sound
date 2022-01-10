@@ -3,19 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
-
 public class PlayerManager : MonoBehaviour
 {
     private PhotonView pv;
     private GameObject playerController;
     private SpawnManager spawnManager;
     private Transform spawnPoint;
-
     private void Awake()
     {
         pv = GetComponent<PhotonView>();
     }
-
     private void Start()
     {
         if(pv.IsMine)
@@ -23,7 +20,6 @@ public class PlayerManager : MonoBehaviour
             CreateController();
         }
     }
-
     private void CreateController()
     {
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
