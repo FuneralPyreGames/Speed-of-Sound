@@ -24,15 +24,11 @@ public class PlayerManager : MonoBehaviour
     {
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         var spawnPoints = spawnManager.GetSpawnPoint();
-        switch (PhotonNetwork.IsMasterClient)
+        spawnPoint = PhotonNetwork.IsMasterClient switch
         {
-            case true:
-                spawnPoint = spawnPoints[0].transform;
-                break;
-            case false:
-                spawnPoint = spawnPoints[1].transform;
-                break;
-        }
+            true => spawnPoints[0].transform,
+            false => spawnPoints[1].transform
+        };
         playerController = PhotonNetwork.Instantiate("PlayerController", spawnPoint.position, spawnPoint.rotation);
     }
 }
