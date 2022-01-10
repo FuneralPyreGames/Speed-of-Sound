@@ -17,6 +17,7 @@ public class LevelSelectMenu : MonoBehaviour
         if (PhotonNetwork.IsMasterClient)
         {
             starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
+            starTracker.LoadStars();
             starCountInt = starTracker.GetTotalStars();
             if(starCountInt >= 8)
             {

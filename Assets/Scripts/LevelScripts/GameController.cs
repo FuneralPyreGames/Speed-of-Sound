@@ -192,33 +192,43 @@ public class GameController : MonoBehaviour
         {
             case 1:
                 starTracker.level1Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
             case 2:
                 starTracker.level2Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
             case 3:
                 starTracker.level3Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
             case 4:
                 starTracker.level4Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
             case 5:
                 starTracker.level5Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
             case 6:
                 starTracker.level6Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
             case 7:
                 starTracker.level7Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
             case 8:
                 starTracker.level8Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
             case 9:
                 starTracker.level9Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
             case 10:
                 starTracker.level10Stars = starsEarned;
+                starTracker.SaveStars();
                 return;
         }
     }

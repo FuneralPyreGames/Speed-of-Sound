@@ -33,7 +33,7 @@ public class MenuTweening : MonoBehaviour
     {
         LeanTween.moveLocalX(mainMenuLeft, -350, .35f);
         LeanTween.moveLocalX(mainMenuRight, 175, .35f);
-        LeanTween.moveLocalY(mainMenuTop, 500, .35f);
+        LeanTween.moveLocalY(mainMenuTop, 700, .35f);
         LeanTween.moveLocalY(helpOverlay, 0, .35f);
     }
     public void TweenHelpToMainMenu()
@@ -47,7 +47,7 @@ public class MenuTweening : MonoBehaviour
     {
         LeanTween.moveLocalX(mainMenuLeft, -350, .35f);
         LeanTween.moveLocalX(mainMenuRight, 175, .35f);
-        LeanTween.moveLocalY(mainMenuTop, 500, .35f);
+        LeanTween.moveLocalY(mainMenuTop, 700, .35f);
         LeanTween.moveLocalX(settingsOverlay, 0, .35f);
     }
     public void TweenSettingsToMainMenu()
@@ -61,7 +61,7 @@ public class MenuTweening : MonoBehaviour
     {
         LeanTween.moveLocalX(mainMenuLeft, -350, .35f);
         LeanTween.moveLocalX(mainMenuRight, 175, .35f);
-        LeanTween.moveLocalY(mainMenuTop, 500, .35f);
+        LeanTween.moveLocalY(mainMenuTop, 700, .35f);
         LeanTween.moveLocalY(creditsOverlay, 0, .35f);
     }
     public void TweenCreditsToMainMenu()
@@ -80,7 +80,7 @@ public class MenuTweening : MonoBehaviour
         LeanTween.moveLocalY(connectingOverlay, 0, .35f);
         LeanTween.moveLocalX(mainMenuLeft, -350, .35f);
         LeanTween.moveLocalX(mainMenuRight, 175, .35f);
-        LeanTween.moveLocalY(mainMenuTop, 250, .35f);
+        LeanTween.moveLocalY(mainMenuTop, 700, .35f);
         launcher.Connect();
     }
     public void ConnectingOverlayToConnectionMenu()

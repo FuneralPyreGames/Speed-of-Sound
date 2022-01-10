@@ -459,6 +459,7 @@ MonoBehaviour:
   countdownText: {fileID: 5900021025681669515}
   countdownTime: 3
   grounded: 0
+  inWallRun: 0
   timerText: {fileID: 6105985731688836303}
   timerUI: {fileID: 6293550089348643717}
   totalSeconds: 0
