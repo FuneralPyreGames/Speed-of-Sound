@@ -2799,3 +2799,74 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009298 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.58 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.302 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1303ms)
+		BeginReloadAssembly (139ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (1076ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (276ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (579ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (84ms)
+				ProcessInitializeOnLoadAttributes (406ms)
+				ProcessInitializeOnLoadMethodAttributes (69ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (23ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.07 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5595 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (353.6 KB). Loaded Objects now: 6637.
+Memory consumption went from 235.1 MB to 234.8 MB.
+Total: 5.610500 ms (FindLiveObjects: 0.801400 ms CreateObjectMapping: 0.538600 ms MarkObjects: 4.082500 ms  DeleteObjects: 0.186100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 115.380008 seconds.
+  path: Assets/Scenes/Levels/(1) Racecar Division/Level 3 - Relay Race.unity
+  artifactKey: Guid(3e5bca541bae42545bd78ae76a1ddad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(1) Racecar Division/Level 3 - Relay Race.unity using Guid(3e5bca541bae42545bd78ae76a1ddad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b478329ff5028ae93417d3fa2601b890') in 0.008322 seconds 
