@@ -116,17 +116,14 @@ public class GameController : MonoBehaviour
             CalculateStars();
         }
     }
-
     private void PlayerOneExitedLevel()
     {
         pv.RPC("RPC_PlayerOneExitedLevel", RpcTarget.All);
     }
-
     private void PlayerTwoExitedLevel()
     {
         pv.RPC("RPC_PlayerTwoExitedLevel", RpcTarget.All);
     }
-
     private void CalculateStars()
     {
         switch (PhotonNetwork.IsMasterClient)
@@ -174,7 +171,6 @@ public class GameController : MonoBehaviour
                 break;
         }
     }
-
     private void EndGame()
     {
         switch (PhotonNetwork.IsMasterClient)
@@ -200,42 +196,82 @@ public class GameController : MonoBehaviour
         switch(currentLevel)
         {
             case 1:
+                if(starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level1Stars = starsEarned;
                 starTracker.SaveStars();
                 return;
             case 2:
+                if (starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level2Stars = starsEarned;
                 starTracker.SaveStars();
                 return;
             case 3:
+                if (starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level3Stars = starsEarned;
                 starTracker.SaveStars();
                 return;
             case 4:
+                if (starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level4Stars = starsEarned;
                 starTracker.SaveStars();
                 return;
             case 5:
+                if (starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level5Stars = starsEarned;
                 starTracker.SaveStars();
                 return;
             case 6:
+                if (starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level6Stars = starsEarned;
                 starTracker.SaveStars();
                 return;
             case 7:
+                if (starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level7Stars = starsEarned;
                 starTracker.SaveStars();
                 return;
             case 8:
+                if (starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level8Stars = starsEarned;
                 starTracker.SaveStars();
                 return;
             case 9:
+                if (starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level9Stars = starsEarned;
                 starTracker.SaveStars();
                 return;
             case 10:
+                if (starsEarned < starTracker.level1Stars)
+                {
+                    return;
+                }
                 starTracker.level10Stars = starsEarned;
                 starTracker.SaveStars();
                 return;

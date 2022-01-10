@@ -58,4 +58,8 @@ public class LevelSelectMenu : MonoBehaviour
     {
         PhotonNetwork.LoadLevel("Level 2 - Through The Walls");
     }
+    public void LoadLevel4()
+    {
+        PhotonNetwork.LoadLevel("Level 4 - Into The Woods");
+    }
 }
