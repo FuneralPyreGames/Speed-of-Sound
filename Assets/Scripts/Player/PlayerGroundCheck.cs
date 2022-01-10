@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerGroundCheck : MonoBehaviour
 {
-    PlayerController playerController;
-    void Awake()
+    private PlayerController playerController;
+    private void Awake()
     {
         playerController = GetComponentInParent<PlayerController>();
     }
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == playerController.gameObject)
         {
@@ -17,7 +16,7 @@ public class PlayerGroundCheck : MonoBehaviour
         }
         playerController.SetGroundedState(true);
     }
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == playerController.gameObject)
         {
@@ -25,7 +24,7 @@ public class PlayerGroundCheck : MonoBehaviour
         }
         playerController.SetGroundedState(false);
     }
-    void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject == playerController.gameObject)
         {
@@ -33,7 +32,7 @@ public class PlayerGroundCheck : MonoBehaviour
         }
         playerController.SetGroundedState(true);
     }
-    void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject == playerController.gameObject)
         {
@@ -41,7 +40,7 @@ public class PlayerGroundCheck : MonoBehaviour
         }
         playerController.SetGroundedState(true);
     }
-    void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject == playerController.gameObject)
         {
@@ -49,7 +48,7 @@ public class PlayerGroundCheck : MonoBehaviour
         }
         playerController.SetGroundedState(false);
     }
-    void OnCollisionStay(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject == playerController.gameObject)
         {

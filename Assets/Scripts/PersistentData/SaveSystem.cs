@@ -5,10 +5,10 @@ public static class SaveSystem
 {
     public static void SaveStars(StarTracker starTracker)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/stars.lmao";
-        FileStream stream = new FileStream(path, FileMode.Create);
-        StarSaver saver = new StarSaver(starTracker);
+        var formatter = new BinaryFormatter();
+        var path = Application.persistentDataPath + "/stars.lmao";
+        var stream = new FileStream(path, FileMode.Create);
+        var saver = new StarSaver(starTracker);
         formatter.Serialize(stream, saver);
         stream.Close();
     }
@@ -17,9 +17,9 @@ public static class SaveSystem
         string path = Application.persistentDataPath + "/stars.lmao";
         if (File.Exists(path))
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-            StarSaver data = formatter.Deserialize(stream) as StarSaver;
+            var formatter = new BinaryFormatter();
+            var stream = new FileStream(path, FileMode.Open);
+            var data = formatter.Deserialize(stream) as StarSaver;
             stream.Close();
             return data;
         }

@@ -8,36 +8,36 @@ using Photon.Pun;
 
 public class PlayerController : MonoBehaviour
 {
-    PlayerControls playerControls;
+    private PlayerControls playerControls;
     public bool isInSinglePlayerTestMode, canMove, amMasterPlayer, amLocalPlayer, isLevelExited;
-    [SerializeField] GameController gameController;
-    [SerializeField] GameObject cameraHolder, canvasForUI, countdownUI;
-    [SerializeField] Transform orientation;
+    [SerializeField] private GameController gameController;
+    [SerializeField] private GameObject cameraHolder, canvasForUI, countdownUI;
+    [SerializeField] private Transform orientation;
     [SerializeField] private Camera cam;
-    [SerializeField] float mouseSensitivity, walkSpeed, sprintSpeed, jumpForce, smoothTime, wallDistance, minimumJumpHeight, wallRunGravity, wallRunJumpForce, fov, wallRunFOV, wallRunFOVTime, camTilt, camTiltTime;
-    [SerializeField] TMP_Text countdownText;
-    [SerializeField] int countdownTime = 3;
-    public float tilt {get; private set;}
-    [SerializeField] bool grounded;
-    RaycastHit leftWallHit, rightWallHit;
-    bool wallLeft, wallRight, wallForward = false;
-    float verticalLookRotation;
-    float moveSpeed = 5;
-    Vector3 moveAmount;
-    Vector3 smoothMoveVelocity;
-    Rigidbody rb;
-    PhotonView PV;
+    [SerializeField] private float mouseSensitivity, walkSpeed, sprintSpeed, jumpForce, smoothTime, wallDistance, minimumJumpHeight, wallRunGravity, wallRunJumpForce, fov, wallRunFOV, wallRunFOVTime, camTilt, camTiltTime;
+    [SerializeField] private TMP_Text countdownText;
+    [SerializeField] private int countdownTime = 3;
+    private float Tilt {get; set;}
+    [SerializeField] private bool grounded;
+    private RaycastHit leftWallHit, rightWallHit;
+    private bool wallLeft, wallRight, wallForward = false;
+    private float verticalLookRotation;
+    private float moveSpeed = 5;
+    private Vector3 moveAmount;
+    private Vector3 smoothMoveVelocity;
+    private Rigidbody rb;
+    private PhotonView PV;
     public bool inWallRun;
     [Header("Timer")]
-    [SerializeField] TMP_Text timerText;
+    [SerializeField]
+    private TMP_Text timerText;
     public GameObject timerUI;
-    float elapsedTime;
+    private float elapsedTime;
     private bool timerGoing = false;
     private TimeSpan timePlaying;
     public int totalSeconds;
     public string timePlayingStr;
-
-    void Awake()
+    private void Awake()
     {
         if(!isInSinglePlayerTestMode)
         {
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
             Destroy(canvasForUI);
         }
     }
-    void Update()
+    private void Update()
     {
         if(canMove == false)
         {
@@ -93,7 +93,8 @@ public class PlayerController : MonoBehaviour
             CheckForJumpInput();
         }
     }
-    void WallRun()
+
+    private void WallRun()
     {
         wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance);
         wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance);
@@ -118,11 +119,13 @@ public class PlayerController : MonoBehaviour
             StopWallRun();
         }
     }
-    bool CanWallRun()
+
+    private bool CanWallRun()
     {
         return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight);
     }
-    void StartWallRun()
+
+    private void StartWallRun()
     {
         inWallRun = true;
         rb.useGravity = false;
@@ -130,15 +133,16 @@ public class PlayerController : MonoBehaviour
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, wallRunFOV, wallRunFOVTime * Time.deltaTime);
         if (wallLeft)
         {
-            tilt = Mathf.Lerp(tilt, -camTilt, camTiltTime * Time.deltaTime);
+            Tilt = Mathf.Lerp(Tilt, -camTilt, camTiltTime * Time.deltaTime);
         }
         else if(wallRight)
         {
-            tilt = Mathf.Lerp(tilt, camTilt, camTiltTime * Time.deltaTime);
+            Tilt = Mathf.Lerp(Tilt, camTilt, camTiltTime * Time.deltaTime);
         }
         playerControls.Movement.Jump.performed += _ => WallRunJump();
     }
-    void WallRunJump()
+
+    private void WallRunJump()
     {
         if(inWallRun)
         {
@@ -156,33 +160,38 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    void StopWallRun()
+
+    private void StopWallRun()
     {
         inWallRun = false;
         rb.useGravity = true;
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallRunFOVTime * Time.deltaTime);
-        tilt = Mathf.Lerp(tilt, 0, camTiltTime);
+        Tilt = Mathf.Lerp(Tilt, 0, camTiltTime);
     }
-    void Look()
+
+    private void Look()
     {
         transform.Rotate((Vector3.up * playerControls.Movement.LookX.ReadValue<float>()) * mouseSensitivity);
         verticalLookRotation += playerControls.Movement.LookY.ReadValue<float>() * mouseSensitivity;
         verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
         cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
-        cameraHolder.transform.Rotate(Vector3.forward * tilt);
+        cameraHolder.transform.Rotate(Vector3.forward * Tilt);
     }
-    void Move()
+
+    private void Move()
     {
         playerControls.Movement.Sprint.started += _ => moveSpeed = sprintSpeed;
         playerControls.Movement.Sprint.canceled += _ => moveSpeed = walkSpeed;
         Vector3 moveDir = new Vector3((playerControls.Movement.GroundMovement.ReadValue<Vector2>().x), 0, (playerControls.Movement.GroundMovement.ReadValue<Vector2>().y)).normalized;
         moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * moveSpeed, ref smoothMoveVelocity, smoothTime);
     }
-    void CheckForJumpInput()
+
+    private void CheckForJumpInput()
     {
         playerControls.Movement.Jump.performed += _ => Jump();
     }
-    void Jump()
+
+    private void Jump()
     {
         if (grounded && !inWallRun)
         {
@@ -193,7 +202,8 @@ public class PlayerController : MonoBehaviour
     {
         grounded = _grounded;
     }
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
         if(!isInSinglePlayerTestMode)
         {
@@ -208,7 +218,7 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine(CountdownToStart());
     }
-    public IEnumerator CountdownToStart()
+    private IEnumerator CountdownToStart()
     {
         while(countdownTime > 0)
         {
@@ -226,7 +236,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         countdownUI.SetActive(false);
     }
-    public IEnumerator Timer()
+    private IEnumerator Timer()
     {
         while(timerGoing)
         {
@@ -249,11 +259,13 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         isLevelExited = true;
     }
-    void OnEnable()
+
+    private void OnEnable()
     {
         playerControls.Enable();
     }
-    void OnDisable()
+
+    private void OnDisable()
     {
         playerControls.Disable();
     }

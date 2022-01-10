@@ -8,14 +8,14 @@ using TMPro;
 public class Launcher : MonoBehaviourPunCallbacks
 {
     public MenuTweening menuTweening;
-    [SerializeField] TMP_InputField nicknameInputField;
-    [SerializeField] TMP_InputField roomNameInputField;
-    [SerializeField] TMP_Text roomNameText;
-    [SerializeField] GameObject startGameButton;
-    [SerializeField] Transform roomListContent;
-    [SerializeField] GameObject roomListItemPrefab;
-    [SerializeField] TMP_Text playerOneName;
-    [SerializeField] TMP_Text playerTwoName;
+    [SerializeField] private TMP_InputField nicknameInputField;
+    [SerializeField] private TMP_InputField roomNameInputField;
+    [SerializeField] private TMP_Text roomNameText;
+    [SerializeField] private GameObject startGameButton;
+    [SerializeField] private Transform roomListContent;
+    [SerializeField] private GameObject roomListItemPrefab;
+    [SerializeField] private TMP_Text playerOneName;
+    [SerializeField] private TMP_Text playerTwoName;
     public void Connect()
     {
         PhotonNetwork.ConnectUsingSettings();
@@ -43,8 +43,10 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public void CreateRoom()
     {
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 2;
+        var roomOptions = new RoomOptions
+        {
+            MaxPlayers = 2
+        };
         PhotonNetwork.CreateRoom(roomNameInputField.text, roomOptions);
     }
     public void LeaveRoom()
@@ -66,7 +68,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
         startGameButton.SetActive(PhotonNetwork.IsMasterClient);
         menuTweening.TweenCreateRoomToRoomMenu();
-        
     }
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {

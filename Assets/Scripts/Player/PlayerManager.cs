@@ -6,33 +6,37 @@ using Photon.Realtime;
 
 public class PlayerManager : MonoBehaviour
 {
-    PhotonView PV;
-    GameObject playerController;
-    SpawnManager spawnManager;
-    Transform spawnpoint;
-    void Awake()
+    private PhotonView pv;
+    private GameObject playerController;
+    private SpawnManager spawnManager;
+    private Transform spawnPoint;
+
+    private void Awake()
     {
-        PV = GetComponent<PhotonView>();
+        pv = GetComponent<PhotonView>();
     }
-    void Start()
+
+    private void Start()
     {
-        if(PV.IsMine)
+        if(pv.IsMine)
         {
             CreateController();
         }
     }
-    void CreateController()
+
+    private void CreateController()
     {
         spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        SpawnPoint[] spawnPoints = spawnManager.GetSpawnPoint();
-        if(PhotonNetwork.IsMasterClient)
+        var spawnPoints = spawnManager.GetSpawnPoint();
+        switch (PhotonNetwork.IsMasterClient)
         {
-            spawnpoint = spawnPoints[0].transform;
+            case true:
+                spawnPoint = spawnPoints[0].transform;
+                break;
+            case false:
+                spawnPoint = spawnPoints[1].transform;
+                break;
         }
-        else if (!PhotonNetwork.IsMasterClient)
-        {
-            spawnpoint = spawnPoints[1].transform;
-        }
-        playerController = PhotonNetwork.Instantiate("PlayerController", spawnpoint.position, spawnpoint.rotation);
+        playerController = PhotonNetwork.Instantiate("PlayerController", spawnPoint.position, spawnPoint.rotation);
     }
 }
