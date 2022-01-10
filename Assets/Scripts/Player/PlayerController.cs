@@ -244,7 +244,6 @@ public class PlayerController : MonoBehaviour
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             timePlayingStr = timePlaying.ToString("mm':'ss'.'ff");
             totalSeconds = (int)timePlaying.TotalSeconds;
-            Debug.Log(totalSeconds);
             timerText.text = timePlayingStr;
             yield return null;
         }
