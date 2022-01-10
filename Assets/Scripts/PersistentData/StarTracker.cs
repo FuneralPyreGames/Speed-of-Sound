@@ -9,4 +9,8 @@ public class StarTracker : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
+    public int GetTotalStars()
+    {
+        return level1Stars + level2Stars + level3Stars + level4Stars + level5Stars + level6Stars + level7Stars + level8Stars + level9Stars + level10Stars + bonusStars;
+    }
 }

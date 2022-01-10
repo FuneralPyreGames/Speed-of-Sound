@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     Vector3 smoothMoveVelocity;
     Rigidbody rb;
     PhotonView PV;
+    public bool inWallRun;
     [Header("Timer")]
     [SerializeField] TMP_Text timerText;
     public GameObject timerUI;
@@ -87,7 +88,10 @@ public class PlayerController : MonoBehaviour
             WallRun();
         }
         Move();
-        CheckForJumpInput();
+        if(!inWallRun)
+        {
+            CheckForJumpInput();
+        }
     }
     void WallRun()
     {
@@ -96,12 +100,6 @@ public class PlayerController : MonoBehaviour
         wallForward = Physics.Raycast(transform.position, orientation.forward, wallDistance);
         if (CanWallRun())
         {
-            //if (wallForward)
-            //{
-                //rb.useGravity = true;
-                //rb.AddForce(Vector3.down/2, ForceMode.Impulse);
-                //return;
-            //}
             if (wallLeft)
             {
                 StartWallRun();
@@ -126,6 +124,7 @@ public class PlayerController : MonoBehaviour
     }
     void StartWallRun()
     {
+        inWallRun = true;
         rb.useGravity = false;
         rb.AddForce(Vector3.down * wallRunGravity, ForceMode.Force);
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, wallRunFOV, wallRunFOVTime * Time.deltaTime);
@@ -141,21 +140,25 @@ public class PlayerController : MonoBehaviour
     }
     void WallRunJump()
     {
-        if (wallLeft)
+        if(inWallRun)
         {
-            Vector3 wallRunJumpDirection = transform.up + leftWallHit.normal;
-            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-            rb.AddForce(wallRunJumpDirection * wallRunJumpForce, ForceMode.Force);
-        }
-        else if (wallRight)
-        {
-            Vector3 wallRunJumpDirection = transform.up + rightWallHit.normal;
-            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-            rb.AddForce(wallRunJumpDirection * wallRunJumpForce, ForceMode.Force);
+            if (wallLeft)
+            {
+                Vector3 wallRunJumpDirection = transform.up + leftWallHit.normal;
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+                rb.AddForce(wallRunJumpDirection * wallRunJumpForce, ForceMode.Force);
+            }
+            else if (wallRight)
+            {
+                Vector3 wallRunJumpDirection = transform.up + rightWallHit.normal;
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+                rb.AddForce(wallRunJumpDirection * wallRunJumpForce, ForceMode.Force);
+            }
         }
     }
     void StopWallRun()
     {
+        inWallRun = false;
         rb.useGravity = true;
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallRunFOVTime * Time.deltaTime);
         tilt = Mathf.Lerp(tilt, 0, camTiltTime);
@@ -181,7 +184,7 @@ public class PlayerController : MonoBehaviour
     }
     void Jump()
     {
-        if (grounded)
+        if (grounded && !inWallRun)
         {
             rb.AddForce(transform.up * jumpForce);
         }
