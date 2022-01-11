@@ -9,9 +9,15 @@ public class Manual2DExample : MonoBehaviour
     {
         playerControls = new PlayerControls();
     }
-    void Update()
+    private void Update()
     {
-        playerControls.Movement.Jump.performed += _ => FMODUnity.RuntimeManager.PlayOneShot("event:/Songs/Your Body");
+        playerControls.Movement.Jump.performed += _ => RunInstance();
+    }
+    private void RunInstance()
+    {
+        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Songs/Your Body");
+        instance.start();
+        instance.release();
     }
     private void OnEnable()
     {
