@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
-
 public class PlayerController : MonoBehaviour
 {
     private PlayerControls playerControls;
@@ -93,7 +92,6 @@ public class PlayerController : MonoBehaviour
             CheckForJumpInput();
         }
     }
-
     private void WallRun()
     {
         wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance);
@@ -119,12 +117,10 @@ public class PlayerController : MonoBehaviour
             StopWallRun();
         }
     }
-
     private bool CanWallRun()
     {
         return !Physics.Raycast(transform.position, Vector3.down, minimumJumpHeight);
     }
-
     private void StartWallRun()
     {
         inWallRun = true;
@@ -141,7 +137,6 @@ public class PlayerController : MonoBehaviour
         }
         playerControls.Movement.Jump.performed += _ => WallRunJump();
     }
-
     private void WallRunJump()
     {
         if(inWallRun)
@@ -160,7 +155,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     private void StopWallRun()
     {
         inWallRun = false;
@@ -168,7 +162,6 @@ public class PlayerController : MonoBehaviour
         cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallRunFOVTime * Time.deltaTime);
         Tilt = Mathf.Lerp(Tilt, 0, camTiltTime);
     }
-
     private void Look()
     {
         transform.Rotate((Vector3.up * playerControls.Movement.LookX.ReadValue<float>()) * mouseSensitivity);
@@ -177,7 +170,6 @@ public class PlayerController : MonoBehaviour
         cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
         cameraHolder.transform.Rotate(Vector3.forward * Tilt);
     }
-
     private void Move()
     {
         playerControls.Movement.Sprint.started += _ => moveSpeed = sprintSpeed;
@@ -185,12 +177,10 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDir = new Vector3((playerControls.Movement.GroundMovement.ReadValue<Vector2>().x), 0, (playerControls.Movement.GroundMovement.ReadValue<Vector2>().y)).normalized;
         moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * moveSpeed, ref smoothMoveVelocity, smoothTime);
     }
-
     private void CheckForJumpInput()
     {
         playerControls.Movement.Jump.performed += _ => Jump();
     }
-
     private void Jump()
     {
         if (grounded && !inWallRun)
@@ -202,7 +192,6 @@ public class PlayerController : MonoBehaviour
     {
         grounded = _grounded;
     }
-
     private void FixedUpdate()
     {
         if(!isInSinglePlayerTestMode)
@@ -258,12 +247,10 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         isLevelExited = true;
     }
-
     private void OnEnable()
     {
         playerControls.Enable();
     }
-
     private void OnDisable()
     {
         playerControls.Disable();
