@@ -43,6 +43,7 @@ MonoBehaviour:
   - RPC_PlayerTwoExitedLevel
   - RPC_SetCorrectControllers
   - RPC_CommunicateTime
+  - RPC_MoveBlock
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

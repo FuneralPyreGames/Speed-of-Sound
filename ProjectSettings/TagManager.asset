@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Player Controller
   - Player Two Block
+  - Player One Block
   layers:
   - Default
   - TransparentFX

@@ -1,22 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
-using Photon.Realtime;
 using UnityEngine;
+
 public class BlockTrigger : MonoBehaviour
 {
     public GameObject blockToMove;
-    private PhotonView photonView;
+    [SerializeField] private PhotonView photonView;
     private void OnTriggerEnter(Collider other)
     {
-        Debug.LogError("Block trigger entered");
-        if (blockToMove.CompareTag("Player Two Block"))
+        if (PhotonNetwork.IsMasterClient)
         {
-            LeanTween.moveLocalX(blockToMove, 500, 1f);
+            if (blockToMove.CompareTag("Player Two Block"))
+            {
+                var position = blockToMove.gameObject.transform.position;
+                position = new Vector3(500, position.y,
+                    position.z);
+                blockToMove.gameObject.transform.position = position;
+                //LeanTween.moveLocalX(blockToMove, 500, 1f);
+            }
+            else if (blockToMove.CompareTag("Player One Block"))
+            {
+                var position = blockToMove.gameObject.transform.position;
+                position = new Vector3(-500, position.y,
+                    position.z);
+                blockToMove.gameObject.transform.position = position;
+                //LeanTween.moveLocalX(blockToMove, -500, 1f);
+            }
         }
         else
         {
-            LeanTween.moveLocalX(blockToMove, -500, 1f);
+            photonView.RPC("RPC_MoveBlock", RpcTarget.Others, blockToMove.transform.position, blockToMove.gameObject.tag);
+        }
+    }
+    [PunRPC]
+    private void RPC_MoveBlock(Vector3 blockToMoveRPC, string blockToMoveTag)
+    {
+        if (blockToMoveTag == "Player Two Block")
+        {
+            var position = blockToMoveRPC;
+            position = new Vector3(500, position.y,
+                position.z);
+            blockToMove.transform.position = position;
+            //LeanTween.moveLocalX(blockToMove, 500, 1f);
+        }
+        else if (blockToMoveTag == "Player One Block")
+        {
+            var position = blockToMoveRPC;
+            position = new Vector3(-500, position.y,
+                position.z);
+            blockToMove.transform.position = position;
+            //LeanTween.moveLocalX(blockToMove, -500, 1f);
         }
     }
 }
