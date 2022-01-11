@@ -11,11 +11,12 @@ public class Loop : MonoBehaviour
     private void Update()
     {
         playerControls.Movement.Jump.performed += _ => StartLoop();
+        playerControls.Movement.Sprint.performed += _ => EndLoop();
     }
 
     private void StartLoop()
     {
-        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Songs/Your Body");
+        instance = FMODUnity.RuntimeManager.CreateInstance("event:/Loops/Your Body Intro Loop");
         instance.start();
     }
 
