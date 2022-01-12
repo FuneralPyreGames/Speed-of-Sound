@@ -2489,7 +2489,7 @@ PrefabInstance:
     - target: {fileID: 5600009069560581397, guid: 73399afd55bdedf4a975730389ffb423,
         type: 3}
       propertyPath: m_text
-      value: Through The Walls
+      value: Beyond The Earth
       objectReference: {fileID: 0}
     - target: {fileID: 5600009069560581397, guid: 73399afd55bdedf4a975730389ffb423,
         type: 3}
@@ -2539,7 +2539,7 @@ PrefabInstance:
     - target: {fileID: 5600009070700531418, guid: 73399afd55bdedf4a975730389ffb423,
         type: 3}
       propertyPath: m_Name
-      value: Level 2
+      value: Level 5
       objectReference: {fileID: 0}
     - target: {fileID: 5600009070700531419, guid: 73399afd55bdedf4a975730389ffb423,
         type: 3}
@@ -2649,7 +2649,7 @@ PrefabInstance:
     - target: {fileID: 5600009071035407326, guid: 73399afd55bdedf4a975730389ffb423,
         type: 3}
       propertyPath: m_text
-      value: Level 2
+      value: Level 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73399afd55bdedf4a975730389ffb423, type: 3}

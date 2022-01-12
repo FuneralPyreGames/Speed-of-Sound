@@ -3690,3 +3690,98 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 516.240122 seconds.
+  path: Assets/Scenes/Levels/(1) Racecar Division/Level 2 - Through The Walls.unity
+  artifactKey: Guid(c9c76e3d8c9fa4d3ebd18bc4ef24f895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(1) Racecar Division/Level 2 - Through The Walls.unity using Guid(c9c76e3d8c9fa4d3ebd18bc4ef24f895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04edf4b0de2b606175291464562b37cc') in 0.017872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.892140 seconds.
+  path: Assets/Scenes/Levels/(2) Jet Division/Level 5 - Beyond The Earth.unity
+  artifactKey: Guid(f38948b0287612741a7e118595a9da19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(2) Jet Division/Level 5 - Beyond The Earth.unity using Guid(f38948b0287612741a7e118595a9da19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88bd9d3a305ffb02b60cf6256792321f') in 0.002128 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.299690 seconds.
+  path: Assets/Scenes/Menus/LevelSelectMenu.unity
+  artifactKey: Guid(402545adc46966f4b8ae0dbc31419fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menus/LevelSelectMenu.unity using Guid(402545adc46966f4b8ae0dbc31419fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36399c89051d936397453972eda99196') in 0.002747 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007902 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.37 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.185 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1186ms)
+		BeginReloadAssembly (136ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (964ms)
+			LoadAssemblies (86ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (256ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (54ms)
+			SetupLoadedEditorAssemblies (489ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (72ms)
+				ProcessInitializeOnLoadAttributes (337ms)
+				ProcessInitializeOnLoadMethodAttributes (61ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5587 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (363.1 KB). Loaded Objects now: 6574.
+Memory consumption went from 233.6 MB to 233.2 MB.
+Total: 3.993300 ms (FindLiveObjects: 0.455900 ms CreateObjectMapping: 0.381200 ms MarkObjects: 3.006700 ms  DeleteObjects: 0.148800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 66.943548 seconds.
+  path: Assets/Scenes/Menus/LevelSelectMenu.unity
+  artifactKey: Guid(402545adc46966f4b8ae0dbc31419fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menus/LevelSelectMenu.unity using Guid(402545adc46966f4b8ae0dbc31419fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb2faafeda836362a4bf31eadeaec1d3') in 0.018232 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.093199 seconds.
+  path: Assets/Scenes/Levels/(2) Jet Division/Level 5 - Beyond The Earth.unity
+  artifactKey: Guid(f38948b0287612741a7e118595a9da19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(2) Jet Division/Level 5 - Beyond The Earth.unity using Guid(f38948b0287612741a7e118595a9da19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8c1931c9fa288f464070a315c3b1569') in 0.001766 seconds 

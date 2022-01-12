@@ -83,4 +83,8 @@ public class LevelSelectMenu : MonoBehaviour
     {
         PhotonNetwork.LoadLevel("Level 4 - Into The Woods");
     }
+    public void LoadLevel5()
+    {
+        PhotonNetwork.LoadLevel("Level 5 - Beyond The Earth");
+    }
 }
