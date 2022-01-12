@@ -10,6 +10,7 @@ public class LevelSelectMenu : MonoBehaviour
 {
     public GameObject divisionChoice;
     [FormerlySerializedAs("racecarDivision")] public GameObject raceCarDivision;
+    public GameObject jetDivision;
     public TMP_Text jetDivisionUnlockCount, rocketDivisionUnlockCount, soundChampionshipUnlockCount, starCount;
     public TMP_Text level1StarCount, level2StarCount, level3StarCount, level4StarCount, level5StarCount, level6StarCount, level7StarCount, level8StarCount, level9StarCount, level10StarCount;
     StarTracker starTracker;
@@ -61,5 +62,25 @@ public class LevelSelectMenu : MonoBehaviour
     public void LoadLevel3()
     {
         PhotonNetwork.LoadLevel("Level 3 - Relay Race");
+    }
+    public void OpenJetDivision()
+    {
+        if(starCountInt<8)
+        {
+            return;
+        }
+        level4StarCount.text = starTracker.level4Stars.ToString() + " Stars";
+        level5StarCount.text = starTracker.level5Stars.ToString() + " Stars";
+        LeanTween.moveLocalY(divisionChoice, 1500, .35f);
+        LeanTween.moveLocalX(jetDivision, 0, .35f);
+    }
+    public void CloseJetDivision()
+    {
+        LeanTween.moveLocalY(divisionChoice, 0, .35f);
+        LeanTween.moveLocalX(jetDivision, -2000, .35f);
+    }
+    public void LoadLevel4()
+    {
+        PhotonNetwork.LoadLevel("Level 4 - Into The Woods");
     }
 }

@@ -204,7 +204,7 @@ public class GameController : MonoBehaviour
                 starTracker.SaveStars();
                 return;
             case 2:
-                if (starsEarned < starTracker.level1Stars)
+                if (starsEarned < starTracker.level2Stars)
                 {
                     return;
                 }
@@ -212,7 +212,7 @@ public class GameController : MonoBehaviour
                 starTracker.SaveStars();
                 return;
             case 3:
-                if (starsEarned < starTracker.level1Stars)
+                if (starsEarned < starTracker.level3Stars)
                 {
                     return;
                 }
@@ -220,7 +220,7 @@ public class GameController : MonoBehaviour
                 starTracker.SaveStars();
                 return;
             case 4:
-                if (starsEarned < starTracker.level1Stars)
+                if (starsEarned < starTracker.level4Stars)
                 {
                     return;
                 }
@@ -228,7 +228,7 @@ public class GameController : MonoBehaviour
                 starTracker.SaveStars();
                 return;
             case 5:
-                if (starsEarned < starTracker.level1Stars)
+                if (starsEarned < starTracker.level5Stars)
                 {
                     return;
                 }
@@ -236,7 +236,7 @@ public class GameController : MonoBehaviour
                 starTracker.SaveStars();
                 return;
             case 6:
-                if (starsEarned < starTracker.level1Stars)
+                if (starsEarned < starTracker.level6Stars)
                 {
                     return;
                 }
@@ -244,7 +244,7 @@ public class GameController : MonoBehaviour
                 starTracker.SaveStars();
                 return;
             case 7:
-                if (starsEarned < starTracker.level1Stars)
+                if (starsEarned < starTracker.level7Stars)
                 {
                     return;
                 }
@@ -252,7 +252,7 @@ public class GameController : MonoBehaviour
                 starTracker.SaveStars();
                 return;
             case 8:
-                if (starsEarned < starTracker.level1Stars)
+                if (starsEarned < starTracker.level8Stars)
                 {
                     return;
                 }
@@ -260,7 +260,7 @@ public class GameController : MonoBehaviour
                 starTracker.SaveStars();
                 return;
             case 9:
-                if (starsEarned < starTracker.level1Stars)
+                if (starsEarned < starTracker.level9Stars)
                 {
                     return;
                 }
@@ -268,7 +268,7 @@ public class GameController : MonoBehaviour
                 starTracker.SaveStars();
                 return;
             case 10:
-                if (starsEarned < starTracker.level1Stars)
+                if (starsEarned < starTracker.level10Stars)
                 {
                     return;
                 }

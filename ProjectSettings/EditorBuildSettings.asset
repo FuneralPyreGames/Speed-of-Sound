@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/(1) Racecar Division/Level 3 - Relay Race.unity
     guid: 3e5bca541bae42545bd78ae76a1ddad8
+  - enabled: 1
+    path: Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods.unity
+    guid: 99e9b858c651b47f8b1a9a13d1e5d2a2
   m_configObjects: {}
