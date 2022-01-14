@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/(2) Jet Division/Level 5 - Beyond The Earth.unity
     guid: f38948b0287612741a7e118595a9da19
+  - enabled: 1
+    path: Assets/Scenes/Levels/(3) Rocket Division/Level 6 - Super Parkour Galaxy.unity
+    guid: 362dfbd17eeb34846a1af32569af6dc8
   m_configObjects: {}

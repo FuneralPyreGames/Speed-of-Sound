@@ -244,8 +244,11 @@ MonoBehaviour:
   countdownText: {fileID: 7519199684084240829}
   countdownTime: 3
   grounded: 0
+  inWallRun: 0
   timerText: {fileID: 7855496244216447225}
   timerUI: {fileID: 7993796897561483187}
+  totalSeconds: 0
+  timePlayingStr: 
 --- !u!54 &245652131123670329
 Rigidbody:
   m_ObjectHideFlags: 0

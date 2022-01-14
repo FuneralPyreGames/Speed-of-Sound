@@ -11,6 +11,7 @@ public class LevelSelectMenu : MonoBehaviour
     public GameObject divisionChoice;
     [FormerlySerializedAs("racecarDivision")] public GameObject raceCarDivision;
     public GameObject jetDivision;
+    public GameObject rocketDivision;
     public TMP_Text jetDivisionUnlockCount, rocketDivisionUnlockCount, soundChampionshipUnlockCount, starCount;
     public TMP_Text level1StarCount, level2StarCount, level3StarCount, level4StarCount, level5StarCount, level6StarCount, level7StarCount, level8StarCount, level9StarCount, level10StarCount;
     StarTracker starTracker;
@@ -86,5 +87,25 @@ public class LevelSelectMenu : MonoBehaviour
     public void LoadLevel5()
     {
         PhotonNetwork.LoadLevel("Level 5 - Beyond The Earth");
+    }
+    public void OpenRocketDivision()
+    {
+        if (starCountInt < 16)
+        {
+            return;
+        }
+        level6StarCount.text = starTracker.level6Stars.ToString() + " Stars";
+        level7StarCount.text = starTracker.level7Stars.ToString() + " Stars";
+        LeanTween.moveLocalY(divisionChoice, 1500, .35f);
+        LeanTween.moveLocalX(rocketDivision, 0, .35f);
+    }
+    public void CloseRocketDivision()
+    {
+        LeanTween.moveLocalY(divisionChoice, 0, .35f);
+        LeanTween.moveLocalX(rocketDivision, -2000, .35f);
+    }
+    public void LoadLevel6()
+    {
+        PhotonNetwork.LoadLevel("Level 6 - Super Parkour Galaxy");
     }
 }

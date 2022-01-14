@@ -307,4 +307,16 @@ public class GameController : MonoBehaviour
     {
         PhotonNetwork.LoadLevel("LevelSelectMenu");
     }
+    public void RestartLevel()
+    {
+        switch (currentLevel)
+        {
+            case 1:
+                PhotonNetwork.LoadLevel("Level 1 - Starting Out");
+                return;
+            case 6:
+                PhotonNetwork.LoadLevel("Level 6 - Super Parkour Galaxy");
+                return;
+        }
+    }
 }

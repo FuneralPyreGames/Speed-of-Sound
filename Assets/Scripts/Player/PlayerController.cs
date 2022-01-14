@@ -80,6 +80,10 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+            if(gameObject.transform.position.y <= -20f)
+            {
+                gameController.RestartLevel();
+            }
         }
         Look();
         if (!grounded)
