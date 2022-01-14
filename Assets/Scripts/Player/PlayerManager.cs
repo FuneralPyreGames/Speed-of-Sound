@@ -34,12 +34,12 @@ public class PlayerManager : MonoBehaviour
     }
     public void BackToSpawn()
     {
-        if(spawnPoint == true)
+        if(PhotonNetwork.IsMasterClient)
         {
             playerController.transform.position = spawnPoints[0].transform.position;
             playerController.transform.rotation = spawnPoints[0].transform.rotation;
         }
-        else if(spawnPoint == false)
+        else if(!PhotonNetwork.IsMasterClient)
         {
             playerController.transform.position = spawnPoints[1].transform.position;
             playerController.transform.rotation = spawnPoints[1].transform.rotation;
