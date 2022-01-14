@@ -757,6 +757,7 @@ GameObject:
   - component: {fileID: 168902702}
   - component: {fileID: 168902701}
   - component: {fileID: 168902703}
+  - component: {fileID: 168902704}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -855,6 +856,14 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!81 &168902704
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168902699}
+  m_Enabled: 1
 --- !u!1 &187900664
 GameObject:
   m_ObjectHideFlags: 0
@@ -7894,6 +7903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1753425088}
   - component: {fileID: 1753425087}
+  - component: {fileID: 1753425089}
   m_Layer: 0
   m_Name: MainMenuAudio
   m_TagString: Untagged
@@ -8012,6 +8022,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1753425089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753425086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03dbe5099e108450fa26a332e55beb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuAudio: {fileID: 1753425087}
+  mainMenuSong: {fileID: 8300000, guid: 549f060b645824b809c5ebea4e65a0df, type: 3}
+  connectionSoundEffect: {fileID: 8300000, guid: 3d6b71cede6224a7b98e1ebfd14d97f9,
+    type: 3}
+  buttonSoundEffect: {fileID: 8300000, guid: 298d0dca448a34f73aff9806456569db, type: 3}
+  joinedRoomSoundEffect: {fileID: 8300000, guid: 4413342c8de40424cb7433cc3f2c7007,
+    type: 3}
 --- !u!1 &1772726708
 GameObject:
   m_ObjectHideFlags: 0

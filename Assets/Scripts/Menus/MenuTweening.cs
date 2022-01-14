@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MenuTweening : MonoBehaviour
 {
+    private MainMenuAudio mainMenuAudio;
     public GameObject onlineNotice;
     public GameObject mainMenuRight;
     public GameObject mainMenuLeft;
@@ -24,6 +25,8 @@ public class MenuTweening : MonoBehaviour
     }
     public void TweenOnlineNoticeToMainMenu()
     {
+        mainMenuAudio = GameObject.Find("MainMenuAudio").GetComponent<MainMenuAudio>();
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveY(onlineNotice, 2000, .35f);
         LeanTween.moveLocalX(mainMenuLeft, 0, .35f);
         LeanTween.moveLocalX(mainMenuRight, 0, .35f);
@@ -31,6 +34,7 @@ public class MenuTweening : MonoBehaviour
     }
     public void TweenMainMenuToHelp()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalX(mainMenuLeft, -350, .35f);
         LeanTween.moveLocalX(mainMenuRight, 175, .35f);
         LeanTween.moveLocalY(mainMenuTop, 700, .35f);
@@ -38,6 +42,7 @@ public class MenuTweening : MonoBehaviour
     }
     public void TweenHelpToMainMenu()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalY(helpOverlay, 1000, .35f);
         LeanTween.moveLocalX(mainMenuLeft, 0, .35f);
         LeanTween.moveLocalX(mainMenuRight, 0, .35f);
@@ -45,6 +50,7 @@ public class MenuTweening : MonoBehaviour
     }
     public void TweenMainMenuToSettings()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalX(mainMenuLeft, -350, .35f);
         LeanTween.moveLocalX(mainMenuRight, 175, .35f);
         LeanTween.moveLocalY(mainMenuTop, 700, .35f);
@@ -52,6 +58,7 @@ public class MenuTweening : MonoBehaviour
     }
     public void TweenSettingsToMainMenu()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalX(settingsOverlay, 1600, .35f);
         LeanTween.moveLocalX(mainMenuLeft, 0, .35f);
         LeanTween.moveLocalX(mainMenuRight, 0, .35f);
@@ -59,6 +66,7 @@ public class MenuTweening : MonoBehaviour
     }
     public void TweenMainMenuToCredits()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalX(mainMenuLeft, -350, .35f);
         LeanTween.moveLocalX(mainMenuRight, 175, .35f);
         LeanTween.moveLocalY(mainMenuTop, 700, .35f);
@@ -66,6 +74,7 @@ public class MenuTweening : MonoBehaviour
     }
     public void TweenCreditsToMainMenu()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalY(creditsOverlay, -1000, .35f);
         LeanTween.moveLocalX(mainMenuLeft, 0, .35f);
         LeanTween.moveLocalX(mainMenuRight, 0, .35f);
@@ -73,10 +82,12 @@ public class MenuTweening : MonoBehaviour
     }
     public void QuitGame()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         Application.Quit();
     }
     public void TweenMainMenuToConnectingOverlay()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalY(connectingOverlay, 0, .35f);
         LeanTween.moveLocalX(mainMenuLeft, -350, .35f);
         LeanTween.moveLocalX(mainMenuRight, 175, .35f);
@@ -85,11 +96,13 @@ public class MenuTweening : MonoBehaviour
     }
     public void ConnectingOverlayToConnectionMenu()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalY(connectingOverlay, 750, .35f);
         LeanTween.moveLocalY(connectionMenu, 0, .35f);
     }
     public void ConnectionMenuToMainMenu()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalY(connectionMenu, -1000, .35f);
         LeanTween.moveLocalX(mainMenuLeft, 0, .35f);
         LeanTween.moveLocalX(mainMenuRight, 0, .35f);
@@ -97,23 +110,27 @@ public class MenuTweening : MonoBehaviour
     }
     public void ConnectionMenuToFindRoom()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         launcher.SetNickname();
         LeanTween.moveLocalX(findRoom, 0, .35f);
         LeanTween.moveLocalX(connectionMenu, -1600, .35f);
     }
     public void FindRoomToConnectionMenu()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalX(findRoom, 2000, .35f);
         LeanTween.moveLocalX(connectionMenu, 0, .35f);
     }
     public void ConnectionMenuToCreateRoom()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         launcher.SetNickname();
         LeanTween.moveLocalX(createRoom, 0, .35f);
         LeanTween.moveLocalX(connectionMenu, -1600, .35f);
     }
     public void CreateRoomToConnectionMenu()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalX(createRoom, 2000, .35f);
         LeanTween.moveLocalX(connectionMenu, 0, .35f);
     }
@@ -129,6 +146,7 @@ public class MenuTweening : MonoBehaviour
     }
     public void TweenRoomMenuToConnectionMenu()
     {
+        mainMenuAudio.PlayButtonSoundEffect();
         LeanTween.moveLocalY(roomMenu, -1000, .35f);
         LeanTween.moveLocalX(connectionMenu, 0, .35f);
     }
