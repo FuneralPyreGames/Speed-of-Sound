@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private PhotonView PV;
     public bool inWallRun;
+    private PlayerManager playerManager;
     [Header("Timer")]
     [SerializeField]
     private TMP_Text timerText;
@@ -52,7 +53,8 @@ public class PlayerController : MonoBehaviour
             return;
         }
         PV = GetComponent<PhotonView>();
-        if(PV.IsMine)
+        playerManager = PhotonView.Find((int)PV.InstantiationData[0]).GetComponent<PlayerManager>();
+        if (PV.IsMine)
         {
             if(PhotonNetwork.IsMasterClient)
             {
@@ -82,7 +84,7 @@ public class PlayerController : MonoBehaviour
             }
             if(gameObject.transform.position.y <= -20f)
             {
-                gameController.RestartLevel();
+                playerManager.BackToSpawn();
             }
         }
         Look();
