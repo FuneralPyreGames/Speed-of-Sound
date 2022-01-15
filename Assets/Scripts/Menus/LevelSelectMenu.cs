@@ -111,6 +111,6 @@ public class LevelSelectMenu : MonoBehaviour
 
     public void LoadLevel7()
     {
-        PhotonNetwork.LoadLevel("Level 7 - Up In Space");
+        PhotonNetwork.LoadLevel("Level 7 - Up In Space") ;
     }
 }

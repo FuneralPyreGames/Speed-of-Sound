@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/(3) Rocket Division/Level 6 - Super Parkour Galaxy.unity
     guid: 362dfbd17eeb34846a1af32569af6dc8
+  - enabled: 1
+    path: Assets/Scenes/Levels/(3) Rocket Division/Level 7 - Up In Space.unity
+    guid: 239ee8efef0b042e8a4367b1cc235926
   m_configObjects: {}
