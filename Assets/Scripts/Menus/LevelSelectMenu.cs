@@ -108,4 +108,9 @@ public class LevelSelectMenu : MonoBehaviour
     {
         PhotonNetwork.LoadLevel("Level 6 - Super Parkour Galaxy");
     }
+
+    public void LoadLevel7()
+    {
+        PhotonNetwork.LoadLevel("Level 7 - Up In Space");
+    }
 }
