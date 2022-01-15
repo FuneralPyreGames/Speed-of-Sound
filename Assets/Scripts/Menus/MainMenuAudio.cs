@@ -15,7 +15,7 @@ public class MainMenuAudio : MonoBehaviour
         PlayMainMenuSong();
     }
 
-    public void PlayMainMenuSong()
+    private void PlayMainMenuSong()
     {
         mainMenuAudio.clip = mainMenuSong;
         mainMenuAudio.Play();

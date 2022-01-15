@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private float Tilt {get; set;}
     [SerializeField] private bool grounded;
     private RaycastHit leftWallHit, rightWallHit;
-    private bool wallLeft, wallRight, wallForward = false;
+    private bool wallLeft, wallRight = false;
     private float verticalLookRotation;
     private float moveSpeed = 5;
     private Vector3 moveAmount;
@@ -87,6 +87,13 @@ public class PlayerController : MonoBehaviour
                 playerManager.BackToSpawn();
             }
         }
+        else if (isInSinglePlayerTestMode)
+        {
+            if(gameObject.transform.position.y <= -20f)
+            {
+                gameObject.transform.position = new Vector3(8.81841f, 1.5f , -8.542144f);
+            } 
+        }
         Look();
         if (!grounded)
         {
@@ -100,9 +107,10 @@ public class PlayerController : MonoBehaviour
     }
     private void WallRun()
     {
-        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance);
-        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance);
-        wallForward = Physics.Raycast(transform.position, orientation.forward, wallDistance);
+        var position = transform.position;
+        var right = orientation.right;
+        wallLeft = Physics.Raycast(position, -right, out leftWallHit, wallDistance);
+        wallRight = Physics.Raycast(position, right, out rightWallHit, wallDistance);
         if (CanWallRun())
         {
             if (wallLeft)
@@ -150,13 +158,17 @@ public class PlayerController : MonoBehaviour
             if (wallLeft)
             {
                 Vector3 wallRunJumpDirection = transform.up + leftWallHit.normal;
-                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+                var velocity = rb.velocity;
+                velocity = new Vector3(velocity.x, 0, velocity.z);
+                rb.velocity = velocity;
                 rb.AddForce(wallRunJumpDirection * wallRunJumpForce, ForceMode.Force);
             }
             else if (wallRight)
             {
                 Vector3 wallRunJumpDirection = transform.up + rightWallHit.normal;
-                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+                var velocity = rb.velocity;
+                velocity = new Vector3(velocity.x, 0, velocity.z);
+                rb.velocity = velocity;
                 rb.AddForce(wallRunJumpDirection * wallRunJumpForce, ForceMode.Force);
             }
         }
