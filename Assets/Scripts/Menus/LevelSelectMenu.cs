@@ -12,7 +12,8 @@ public class LevelSelectMenu : MonoBehaviour
     [FormerlySerializedAs("racecarDivision")] public GameObject raceCarDivision;
     public GameObject jetDivision;
     public GameObject rocketDivision;
-    public TMP_Text jetDivisionUnlockCount, rocketDivisionUnlockCount, soundChampionshipUnlockCount, starCount;
+    public GameObject bonusContent;
+    public TMP_Text jetDivisionUnlockCount, rocketDivisionUnlockCount, soundChampionshipUnlockCount, starCount, level9UnlockStatus, level10UnlockStatus;
     public TMP_Text level1StarCount, level2StarCount, level3StarCount, level4StarCount, level5StarCount, level6StarCount, level7StarCount, level8StarCount, level9StarCount, level10StarCount;
     StarTracker starTracker;
     public int starCountInt;
@@ -112,5 +113,44 @@ public class LevelSelectMenu : MonoBehaviour
     public void LoadLevel7()
     {
         PhotonNetwork.LoadLevel("Level 7 - Up In Space") ;
+    }
+
+    public void OpenBonusContent()
+    {
+        level9StarCount.text = starTracker.level9Stars.ToString() + " Stars";
+        level10StarCount.text = starTracker.level10Stars.ToString() + " Stars";
+        if (starCountInt >= 25)
+        {
+            level9UnlockStatus.text = "Unlocked!";
+            if (starCountInt >= 45)
+            {
+                level10UnlockStatus.text = "Unlocked!";
+            }
+        }
+        LeanTween.moveLocalY(divisionChoice, 1500, .35f);
+        LeanTween.moveLocalX(bonusContent, 0, .35f);
+    }
+    public void CloseBonusContent()
+    {
+        LeanTween.moveLocalY(divisionChoice, 0, .35f);
+        LeanTween.moveLocalX(rocketDivision, -2000, .35f);
+    }
+
+    public void LoadLevel9()
+    {
+        if (starCountInt < 25)
+        {
+            return;
+        }
+        PhotonNetwork.LoadLevel("Level 9 - Test Level");
+    }
+
+    public void LoadLevel10()
+    {
+        if (starCountInt < 45)
+        {
+            return;
+        }
+        PhotonNetwork.LoadLevel("Level 10 - The Storm");
     }
 }
