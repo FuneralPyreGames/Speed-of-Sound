@@ -34,15 +34,16 @@ public class PlayerManager : MonoBehaviour
     }
     public void BackToSpawn()
     {
-        if(PhotonNetwork.IsMasterClient)
+        switch (PhotonNetwork.IsMasterClient)
         {
-            playerController.transform.position = spawnPoints[0].transform.position;
-            playerController.transform.rotation = spawnPoints[0].transform.rotation;
-        }
-        else if(!PhotonNetwork.IsMasterClient)
-        {
-            playerController.transform.position = spawnPoints[1].transform.position;
-            playerController.transform.rotation = spawnPoints[1].transform.rotation;
+            case true:
+                playerController.transform.position = spawnPoints[0].transform.position;
+                playerController.transform.rotation = spawnPoints[0].transform.rotation;
+                break;
+            case false:
+                playerController.transform.position = spawnPoints[1].transform.position;
+                playerController.transform.rotation = spawnPoints[1].transform.rotation;
+                break;
         }
     }
 }

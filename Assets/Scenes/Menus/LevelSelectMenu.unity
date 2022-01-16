@@ -5044,13 +5044,13 @@ MonoBehaviour:
   raceCarDivision: {fileID: 1757776386}
   jetDivision: {fileID: 662836440}
   rocketDivision: {fileID: 927239}
-  bonusContent: {fileID: 0}
+  bonusContent: {fileID: 915233179}
   jetDivisionUnlockCount: {fileID: 1760208992}
   rocketDivisionUnlockCount: {fileID: 709058083}
   soundChampionshipUnlockCount: {fileID: 273611548}
   starCount: {fileID: 618332252}
-  level9UnlockStatus: {fileID: 0}
-  level10UnlockStatus: {fileID: 0}
+  level9UnlockStatus: {fileID: 2104022117}
+  level10UnlockStatus: {fileID: 1780832330}
   level1StarCount: {fileID: 358291434}
   level2StarCount: {fileID: 1555641230}
   level3StarCount: {fileID: 1018784770}
@@ -5059,8 +5059,8 @@ MonoBehaviour:
   level6StarCount: {fileID: 1948035097}
   level7StarCount: {fileID: 165887819}
   level8StarCount: {fileID: 0}
-  level9StarCount: {fileID: 0}
-  level10StarCount: {fileID: 0}
+  level9StarCount: {fileID: 1178644562}
+  level10StarCount: {fileID: 1788447412}
   starCountInt: 0
 --- !u!1 &1323934609
 GameObject:
@@ -6144,7 +6144,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1267957286}
         m_TargetAssemblyTypeName: LevelSelectMenu, Assembly-CSharp
-        m_MethodName: CloseBonusContent
+        m_MethodName: OpenBonusContent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
