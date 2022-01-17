@@ -5699,7 +5699,7 @@ MonoBehaviour:
   jetDivision: {fileID: 662836440}
   rocketDivision: {fileID: 927239}
   bonusContent: {fileID: 915233179}
-  soundChampionship: {fileID: 0}
+  soundChampionship: {fileID: 610375384}
   jetDivisionUnlockCount: {fileID: 1760208992}
   rocketDivisionUnlockCount: {fileID: 709058083}
   soundChampionshipUnlockCount: {fileID: 273611548}
@@ -5713,7 +5713,7 @@ MonoBehaviour:
   level5StarCount: {fileID: 2062563480}
   level6StarCount: {fileID: 1948035097}
   level7StarCount: {fileID: 165887819}
-  level8StarCount: {fileID: 0}
+  level8StarCount: {fileID: 1772066950}
   level9StarCount: {fileID: 1178644562}
   level10StarCount: {fileID: 1788447412}
   starCountInt: 0

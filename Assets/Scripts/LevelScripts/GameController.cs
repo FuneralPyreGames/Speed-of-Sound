@@ -30,6 +30,8 @@ public class GameController : MonoBehaviour
         playerTwoEndLevelStarsString,
         playerOneCongratsString,
         playerTwoCongratsString;
+
+    private bool notCalledYet = false;
     [Header("Times")]
     public int platinumTime;
     public int goldTime;
@@ -120,8 +122,9 @@ public class GameController : MonoBehaviour
             Debug.Log("Player two exited level");
             PlayerTwoExitedLevel();
         }
-        if (playerOneExited && playerTwoExited)
+        if (playerOneExited && playerTwoExited && !notCalledYet)
         {
+            notCalledYet = true;
             CalculateStars();
         }
     }
@@ -209,8 +212,8 @@ public class GameController : MonoBehaviour
                     playerOneEndLevelRankString.text = "Rank- " + rankEarned;
                     playerOneCongratsString.text = starsEarned switch
                     {
-                        1 => "You won the championship!",
-                        2 => "You lost the championship!",
+                        1 => "You won!",
+                        0 => "You lost!",
                         _ => playerOneCongratsString.text
                     };
                     playerOneLevelFinishUI.SetActive(true);
@@ -222,8 +225,8 @@ public class GameController : MonoBehaviour
                     playerTwoEndLevelRankString.text = "Rank- " + rankEarned;
                     playerTwoCongratsString.text = starsEarned switch
                     {
-                        1 => "You won the championship!",
-                        2 => "You lost the championship!",
+                        1 => "You won!",
+                        0 => "You lost!",
                         _ => playerTwoCongratsString.text
                     };
                     playerTwoLevelFinishUI.SetActive(true);
@@ -364,10 +367,6 @@ public class GameController : MonoBehaviour
     }
     public void ExitLevel()
     {
-        if (currentLevel == 8)
-        {
-            Debug.Log("Go to the win screen!");
-        }
         PhotonNetwork.LoadLevel("LevelSelectMenu");
     }
     public void RestartLevel()
