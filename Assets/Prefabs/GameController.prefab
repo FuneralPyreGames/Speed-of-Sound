@@ -2125,6 +2125,8 @@ MonoBehaviour:
   playerTwoEndLevelTimerString: {fileID: 4524085191768087383}
   playerTwoEndLevelRankString: {fileID: 6327083133398981044}
   playerTwoEndLevelStarsString: {fileID: 4738055555501601641}
+  playerOneCongratsString: {fileID: 3921499992090838738}
+  playerTwoCongratsString: {fileID: 1985727291411332408}
   platinumTime: 0
   goldTime: 0
   silverTime: 0

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
+using Unity.VisualScripting;
+
 public class GameController : MonoBehaviour
 {
     public int currentLevel;
@@ -20,7 +22,14 @@ public class GameController : MonoBehaviour
     private int secondsToComplete;
     private int starsEarned;
     private StarTracker starTracker;
-    public TMP_Text playerOneEndLevelTimerString, playerOneEndLevelRankString, playerOneEndLevelStarsString, playerTwoEndLevelTimerString, playerTwoEndLevelRankString, playerTwoEndLevelStarsString;
+    public TMP_Text playerOneEndLevelTimerString,
+        playerOneEndLevelRankString,
+        playerOneEndLevelStarsString,
+        playerTwoEndLevelTimerString,
+        playerTwoEndLevelRankString,
+        playerTwoEndLevelStarsString,
+        playerOneCongratsString,
+        playerTwoCongratsString;
     [Header("Times")]
     public int platinumTime;
     public int goldTime;
@@ -133,6 +142,23 @@ public class GameController : MonoBehaviour
                 firstPlayerControllerComponents.StopTimer();
                 secondsToComplete = firstPlayerControllerComponents.totalSeconds;
                 timerString = firstPlayerControllerComponents.timePlayingStr;
+                if (currentLevel == 8)
+                {
+                    if (secondsToComplete - platinumTime <= 0)
+                    {
+                        Debug.Log("Championship won!");
+                        rankEarned = "Win";
+                        starsEarned = 1;
+                    }
+                    else
+                    {
+                        Debug.Log("Championship lost!");
+                        rankEarned = "Lost";
+                        starsEarned = 0;
+                    }
+                    pv.RPC("RPC_CommunicateTime", RpcTarget.All, rankEarned, timerString, starsEarned);
+                    return;
+                }
                 if(secondsToComplete - platinumTime <= 0)
                 {
                     starsEarned = 5;
@@ -173,6 +199,39 @@ public class GameController : MonoBehaviour
     }
     private void EndGame()
     {
+        if (currentLevel == 8)
+        {
+            switch (PhotonNetwork.IsMasterClient)
+            {
+                case true:
+                    playerOneEndLevelTimerString.text = "Time- " + timerString;
+                    playerOneEndLevelStarsString.text = "Stars- " + starsEarned.ToString() + " Stars";
+                    playerOneEndLevelRankString.text = "Rank- " + rankEarned;
+                    playerOneCongratsString.text = starsEarned switch
+                    {
+                        1 => "You won the championship!",
+                        2 => "You lost the championship!",
+                        _ => playerOneCongratsString.text
+                    };
+                    playerOneLevelFinishUI.SetActive(true);
+                    TrackStars();
+                    break;
+                case false:
+                    playerTwoEndLevelTimerString.text = "Time- " + timerString;
+                    playerTwoEndLevelStarsString.text = "Stars- " + starsEarned.ToString() + " Stars";
+                    playerTwoEndLevelRankString.text = "Rank- " + rankEarned;
+                    playerTwoCongratsString.text = starsEarned switch
+                    {
+                        1 => "You won the championship!",
+                        2 => "You lost the championship!",
+                        _ => playerTwoCongratsString.text
+                    };
+                    playerTwoLevelFinishUI.SetActive(true);
+                    break;
+                    
+            }
+            return;
+        }
         switch (PhotonNetwork.IsMasterClient)
         {
             case true:
@@ -305,6 +364,10 @@ public class GameController : MonoBehaviour
     }
     public void ExitLevel()
     {
+        if (currentLevel == 8)
+        {
+            Debug.Log("Go to the win screen!");
+        }
         PhotonNetwork.LoadLevel("LevelSelectMenu");
     }
     public void RestartLevel()

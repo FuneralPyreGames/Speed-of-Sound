@@ -13,6 +13,7 @@ public class LevelSelectMenu : MonoBehaviour
     public GameObject jetDivision;
     public GameObject rocketDivision;
     public GameObject bonusContent;
+    public GameObject soundChampionship;
     public TMP_Text jetDivisionUnlockCount, rocketDivisionUnlockCount, soundChampionshipUnlockCount, starCount, level9UnlockStatus, level10UnlockStatus;
     public TMP_Text level1StarCount, level2StarCount, level3StarCount, level4StarCount, level5StarCount, level6StarCount, level7StarCount, level8StarCount, level9StarCount, level10StarCount;
     StarTracker starTracker;
@@ -113,6 +114,29 @@ public class LevelSelectMenu : MonoBehaviour
     public void LoadLevel7()
     {
         PhotonNetwork.LoadLevel("Level 7 - Up In Space") ;
+    }
+
+    public void OpenSoundChampionship()
+    {
+        if (starCountInt < 24)
+        {
+            return;
+        }
+
+        level8StarCount.text = starTracker.level8Stars.ToString() + " Stars";
+        LeanTween.moveLocalY(divisionChoice, 1500, .35f);
+        LeanTween.moveLocalX(soundChampionship, 0, .35f);
+    }
+
+    public void CloseSoundChampionship()
+    {
+        LeanTween.moveLocalY(divisionChoice, 0, .35f);
+        LeanTween.moveLocalX(rocketDivision, -2000, .35f);
+    }
+
+    public void LoadLevel8()
+    {
+        PhotonNetwork.LoadLevel("Level 8 - The Championship");
     }
 
     public void OpenBonusContent()
