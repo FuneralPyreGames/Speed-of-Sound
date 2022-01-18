@@ -367,6 +367,14 @@ public class GameController : MonoBehaviour
     }
     public void ExitLevel()
     {
+        if (currentLevel == 8)
+        {
+            if (starsEarned == 1)
+            {
+                PhotonNetwork.LoadLevel("Championship Win");
+                return;
+            }
+        }
         PhotonNetwork.LoadLevel("LevelSelectMenu");
     }
     public void RestartLevel()
