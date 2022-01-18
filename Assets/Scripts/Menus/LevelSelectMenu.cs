@@ -18,6 +18,17 @@ public class LevelSelectMenu : MonoBehaviour
     public TMP_Text level1StarCount, level2StarCount, level3StarCount, level4StarCount, level5StarCount, level6StarCount, level7StarCount, level8StarCount, level9StarCount, level10StarCount;
     StarTracker starTracker;
     public int starCountInt;
+
+    public int jetDivStarUnlockCount = 7;
+
+    public int rocketDivStarUnlockCount = 12;
+
+    public int soundChampionshipStarUnlockCount = 20;
+
+    public int testLevelStarUnlockCount = 25;
+
+    public int theStormStarUnlockCount = 45;
+
     private void Awake()
     {
         if (PhotonNetwork.IsMasterClient)
@@ -25,13 +36,13 @@ public class LevelSelectMenu : MonoBehaviour
             starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
             starTracker.LoadStars();
             starCountInt = starTracker.GetTotalStars();
-            if(starCountInt >= 8)
+            if(starCountInt >= jetDivStarUnlockCount)
             {
                 jetDivisionUnlockCount.text = "Unlocked!";
-                if (starCountInt >= 16)
+                if (starCountInt >= rocketDivStarUnlockCount)
                 {
                     rocketDivisionUnlockCount.text = "Unlocked!";
-                    if (starCountInt >= 24)
+                    if (starCountInt >= soundChampionshipStarUnlockCount)
                     {
                         soundChampionshipUnlockCount.text = "Unlocked!";
                     }
@@ -68,7 +79,7 @@ public class LevelSelectMenu : MonoBehaviour
     }
     public void OpenJetDivision()
     {
-        if(starCountInt<8)
+        if(starCountInt<jetDivStarUnlockCount)
         {
             return;
         }
@@ -92,7 +103,7 @@ public class LevelSelectMenu : MonoBehaviour
     }
     public void OpenRocketDivision()
     {
-        if (starCountInt < 16)
+        if (starCountInt < rocketDivStarUnlockCount)
         {
             return;
         }
@@ -118,7 +129,7 @@ public class LevelSelectMenu : MonoBehaviour
 
     public void OpenSoundChampionship()
     {
-        if (starCountInt < 24)
+        if (starCountInt < soundChampionshipStarUnlockCount)
         {
             return;
         }
@@ -143,10 +154,10 @@ public class LevelSelectMenu : MonoBehaviour
     {
         level9StarCount.text = starTracker.level9Stars.ToString() + " Stars";
         level10StarCount.text = starTracker.level10Stars.ToString() + " Stars";
-        if (starCountInt >= 25)
+        if (starCountInt >= testLevelStarUnlockCount)
         {
             level9UnlockStatus.text = "Unlocked!";
-            if (starCountInt >= 45)
+            if (starCountInt >= theStormStarUnlockCount)
             {
                 level10UnlockStatus.text = "Unlocked!";
             }
@@ -162,7 +173,7 @@ public class LevelSelectMenu : MonoBehaviour
 
     public void LoadLevel9()
     {
-        if (starCountInt < 25)
+        if (starCountInt < testLevelStarUnlockCount)
         {
             return;
         }
@@ -171,7 +182,7 @@ public class LevelSelectMenu : MonoBehaviour
 
     public void LoadLevel10()
     {
-        if (starCountInt < 45)
+        if (starCountInt < theStormStarUnlockCount)
         {
             return;
         }

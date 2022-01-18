@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocks at 24 stars!
+  m_text: Unlocks at 20 stars!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3401,7 +3401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocks at 16 stars!
+  m_text: Unlocks at 12 stars!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5717,6 +5717,11 @@ MonoBehaviour:
   level9StarCount: {fileID: 1178644562}
   level10StarCount: {fileID: 1788447412}
   starCountInt: 0
+  jetDivStarUnlockCount: 0
+  rocketDivStarUnlockCount: 0
+  soundChampionshipStarUnlockCount: 0
+  testLevelStarUnlockCount: 0
+  theStormStarUnlockCount: 0
 --- !u!1 &1323934609
 GameObject:
   m_ObjectHideFlags: 0
@@ -7374,7 +7379,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unlocks at 8 stars!
+  m_text: Unlocks at 7 stars!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

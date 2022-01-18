@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/(5) Joy Division or Bonus Levels/Level 10 - The Storm.unity
     guid: f166871139ea6435ba4d9b45922311e5
+  - enabled: 1
+    path: Assets/Scenes/Menus/Championship Win.unity
+    guid: 3aeff852ab16e47c3ad4b9efa159e55b
   m_configObjects: {}
