@@ -68,7 +68,7 @@ public class Launcher : MonoBehaviourPunCallbacks
             playerTwoName.text = PhotonNetwork.NickName;
         }
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
-        startGameButton.SetActive(PhotonNetwork.IsMasterClient);
+        startGameButton.SetActive(PhotonNetwork.IsMasterClient && PhotonNetwork.CountOfPlayers > 1);
         menuTweening.TweenCreateRoomToRoomMenu();
         MainMenuAudio mainMenuAudio = GameObject.Find("MainMenuAudio").GetComponent<MainMenuAudio>();
         mainMenuAudio.PlayJoinRoomSoundEffect();
@@ -82,6 +82,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         else
         {
             playerTwoName.text = newPlayer.NickName;
+            startGameButton.SetActive(PhotonNetwork.IsMasterClient);
         }
     }
     public override void OnMasterClientSwitched(Player newMasterClient)
@@ -111,6 +112,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public void StartGame()
     {
-        PhotonNetwork.LoadLevel("LevelSelectMenu");
+        PhotonNetwork.LoadLevel("StartGame");
     }
 }

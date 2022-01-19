@@ -19,6 +19,11 @@ public class StarSaver
     public bool bonusStar2Got;
     public bool bonusStar3Got;
     public bool bonusStar4Got;
+    public int jetDivStarUnlockCount;
+    public int rocketDivStarUnlockCount;
+    public int soundChampionshipStarUnlockCount;
+    public int testLevelStarUnlockCount;
+    public int theStormStarUnlockCount;
     public StarSaver(StarTracker starTracker)
     {
         level1Stars = starTracker.level1Stars;
@@ -36,5 +41,10 @@ public class StarSaver
         bonusStar2Got = starTracker.bonusStar2Got;
         bonusStar3Got = starTracker.bonusStar3Got;
         bonusStar4Got = starTracker.bonusStar4Got;
+        jetDivStarUnlockCount = starTracker.jetDivStarUnlockCount;
+        rocketDivStarUnlockCount = starTracker.rocketDivStarUnlockCount;
+        soundChampionshipStarUnlockCount = starTracker.soundChampionshipStarUnlockCount;
+        testLevelStarUnlockCount = starTracker.testLevelStarUnlockCount;
+        theStormStarUnlockCount = starTracker.theStormStarUnlockCount;
     }
 }

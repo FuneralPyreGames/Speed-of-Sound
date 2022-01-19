@@ -36,17 +36,46 @@ public class LevelSelectMenu : MonoBehaviour
             starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
             starTracker.LoadStars();
             starCountInt = starTracker.GetTotalStars();
+            jetDivStarUnlockCount = starTracker.jetDivStarUnlockCount;
+            rocketDivStarUnlockCount = starTracker.rocketDivStarUnlockCount;
+            soundChampionshipStarUnlockCount = starTracker.soundChampionshipStarUnlockCount;
+            testLevelStarUnlockCount = starTracker.testLevelStarUnlockCount;
+            theStormStarUnlockCount = starTracker.theStormStarUnlockCount;
+            //if(starCountInt >= jetDivStarUnlockCount)
+            //{
+              //  jetDivisionUnlockCount.text = "Unlocked!";
+                //if (starCountInt >= rocketDivStarUnlockCount)
+                //{
+                  //  rocketDivisionUnlockCount.text = "Unlocked!";
+                    //if (starCountInt >= soundChampionshipStarUnlockCount)
+                    //{
+                     //   soundChampionshipUnlockCount.text = "Unlocked!";
+                   //}
+                //}
+           // }
             if(starCountInt >= jetDivStarUnlockCount)
             {
                 jetDivisionUnlockCount.text = "Unlocked!";
-                if (starCountInt >= rocketDivStarUnlockCount)
-                {
-                    rocketDivisionUnlockCount.text = "Unlocked!";
-                    if (starCountInt >= soundChampionshipStarUnlockCount)
-                    {
-                        soundChampionshipUnlockCount.text = "Unlocked!";
-                    }
-                }
+            }
+            else
+            {
+                jetDivisionUnlockCount.text = "Unlocks at " + jetDivStarUnlockCount.ToString() + " stars!";
+            }
+            if (starCountInt >= rocketDivStarUnlockCount)
+            {
+                rocketDivisionUnlockCount.text = "Unlocked!";
+            }
+            else
+            {
+                rocketDivisionUnlockCount.text = "Unlocks at " + rocketDivStarUnlockCount.ToString() + " stars!";
+            }
+            if (starCountInt >= soundChampionshipStarUnlockCount)
+            {
+                soundChampionshipUnlockCount.text = "Unlocked!";
+            }
+            else
+            {
+                soundChampionshipUnlockCount.text = "Unlocks at " + soundChampionshipStarUnlockCount.ToString() + " stars!";
             }
             starCount.text = starCountInt.ToString() + " Stars";
             LeanTween.moveLocalY(divisionChoice, 0, 1f);
@@ -157,10 +186,18 @@ public class LevelSelectMenu : MonoBehaviour
         if (starCountInt >= testLevelStarUnlockCount)
         {
             level9UnlockStatus.text = "Unlocked!";
-            if (starCountInt >= theStormStarUnlockCount)
-            {
-                level10UnlockStatus.text = "Unlocked!";
-            }
+        }
+        else
+        {
+            level9UnlockStatus.text = "Unlocks at " + testLevelStarUnlockCount.ToString() + " stars!";
+        }
+        if (starCountInt >= theStormStarUnlockCount)
+        {
+            level10UnlockStatus.text = "Unlocked!";
+        }
+        else
+        {
+            level10UnlockStatus.text = "Unlocks at " + theStormStarUnlockCount.ToString() + " stars!";
         }
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(bonusContent, 0, .35f);

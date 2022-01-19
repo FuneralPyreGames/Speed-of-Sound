@@ -8,6 +8,11 @@ public class StarTracker : MonoBehaviour
     public bool bonusStar2Got = false;
     public bool bonusStar3Got = false;
     public bool bonusStar4Got = false;
+    public int jetDivStarUnlockCount;
+    public int rocketDivStarUnlockCount;
+    public int soundChampionshipStarUnlockCount;
+    public int testLevelStarUnlockCount;
+    public int theStormStarUnlockCount;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -42,6 +47,11 @@ public class StarTracker : MonoBehaviour
         bonusStar2Got = data.bonusStar2Got;
         bonusStar3Got = data.bonusStar3Got;
         bonusStar4Got = data.bonusStar4Got;
+        jetDivStarUnlockCount = data.jetDivStarUnlockCount;
+        rocketDivStarUnlockCount = data.rocketDivStarUnlockCount;
+        soundChampionshipStarUnlockCount = data.soundChampionshipStarUnlockCount;
+        testLevelStarUnlockCount = data.testLevelStarUnlockCount;
+        theStormStarUnlockCount = data.theStormStarUnlockCount;
     }
     public void ResetStars()
     {
