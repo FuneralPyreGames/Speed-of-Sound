@@ -280,12 +280,14 @@ public class PlayerController : MonoBehaviour
     }
     public void SaveBonusStar(int bonusStarNumber)
     {
+        Debug.Log("Saving bonus star");
         gameController.SaveBonusStars(bonusStarNumber);
     }
 
     [PunRPC]
     private void RPC_TellMainPlayerBonusStarWasCollected(int bonusStarNumber)
     {
+        Debug.Log("RPC heard");
         SaveBonusStar(bonusStarNumber);
     }
 }

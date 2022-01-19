@@ -393,44 +393,58 @@ public class GameController : MonoBehaviour
     public void SaveBonusStars(int bonusStarNumber)
     {
         starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
+        Debug.Log("Time to save");
+        Debug.Log("You picked up bonus star " + bonusStarNumber);
         switch (bonusStarNumber)
         {
             case 1:
             {
+                Debug.Log(starTracker.bonusStar1Got);
                 if (starTracker.bonusStar1Got == false)
                 {
+                    Debug.Log("Got bonus star one!");
                     starTracker.bonusStars += 1;
                     starTracker.bonusStar1Got = true;
+                    
                 }
 
                 break;
             }
             case 2:
             {
+                Debug.Log(starTracker.bonusStar2Got);
                 if (starTracker.bonusStar2Got == false)
                 {
+                    Debug.Log("Got bonus star two!");
                     starTracker.bonusStars += 1;
                     starTracker.bonusStar2Got = true;
+                    
                 }
 
                 break;
             }
             case 3:
             {
+                Debug.Log(starTracker.bonusStar3Got);
                 if (starTracker.bonusStar3Got == false)
                 {
+                    Debug.Log("Got bonus star three!");
                     starTracker.bonusStars += 1;
                     starTracker.bonusStar3Got = true;
+                    
                 }
 
                 break;
             }
             case 4:
             {
+                Debug.Log(starTracker.bonusStar4Got);
                 if (starTracker.bonusStar4Got == false)
                 {
+                    Debug.Log("Got bonus star four!");
                     starTracker.bonusStars += 1;
                     starTracker.bonusStar4Got = true;
+                    
                 }
 
                 break;

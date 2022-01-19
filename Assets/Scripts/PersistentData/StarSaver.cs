@@ -14,6 +14,7 @@ public class StarSaver
     public int level8Stars;
     public int level9Stars;
     public int level10Stars;
+    public int bonusStars;
     public bool bonusStar1Got;
     public bool bonusStar2Got;
     public bool bonusStar3Got;
@@ -30,6 +31,7 @@ public class StarSaver
         level8Stars = starTracker.level8Stars;
         level9Stars = starTracker.level9Stars;
         level10Stars = starTracker.level10Stars;
+        bonusStars = starTracker.bonusStars;
         bonusStar1Got = starTracker.bonusStar1Got;
         bonusStar2Got = starTracker.bonusStar2Got;
         bonusStar3Got = starTracker.bonusStar3Got;

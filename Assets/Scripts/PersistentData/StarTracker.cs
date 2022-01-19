@@ -37,6 +37,7 @@ public class StarTracker : MonoBehaviour
         level8Stars = data.level8Stars;
         level9Stars = data.level9Stars;
         level10Stars = data.level10Stars;
+        bonusStars = data.bonusStars;
         bonusStar1Got = data.bonusStar1Got;
         bonusStar2Got = data.bonusStar2Got;
         bonusStar3Got = data.bonusStar3Got;
@@ -54,6 +55,7 @@ public class StarTracker : MonoBehaviour
         level8Stars = 0;
         level9Stars = 0;
         level10Stars = 0;
+        bonusStars = 0;
         bonusStar1Got = false;
         bonusStar2Got = false;
         bonusStar3Got = false;

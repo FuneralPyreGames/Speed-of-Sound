@@ -3,14 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class BonusStar : MonoBehaviour
 {
     public int bonusStarNumber;
-    private void OnTriggerEnter(Collider other)
+    public PlayerController playerController;
+    private void OnTriggerEnter(Collider collision)
     {
         //To begin, the bonus star script checks to see if the master client got the star, and if it doesn't, it uses a rpc call to ensure the master client does
-        var playerController = other.gameObject.GetComponent<PlayerController>();
+        if (!collision.gameObject.CompareTag("Player Controller"))
+        {
+            return;
+        }
+        playerController = collision.gameObject.GetComponent<PlayerController>();
+        Debug.Log("Player Controller");
+        Debug.Log("Is Master Client= " + PhotonNetwork.IsMasterClient);
         switch (PhotonNetwork.IsMasterClient)
         {
             case true:

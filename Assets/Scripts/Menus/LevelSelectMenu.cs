@@ -142,7 +142,7 @@ public class LevelSelectMenu : MonoBehaviour
     public void CloseSoundChampionship()
     {
         LeanTween.moveLocalY(divisionChoice, 0, .35f);
-        LeanTween.moveLocalX(rocketDivision, -2000, .35f);
+        LeanTween.moveLocalX(soundChampionship, -2000, .35f);
     }
 
     public void LoadLevel8()
@@ -168,7 +168,7 @@ public class LevelSelectMenu : MonoBehaviour
     public void CloseBonusContent()
     {
         LeanTween.moveLocalY(divisionChoice, 0, .35f);
-        LeanTween.moveLocalX(rocketDivision, -2000, .35f);
+        LeanTween.moveLocalX(bonusContent, -2000, .35f);
     }
 
     public void LoadLevel9()
