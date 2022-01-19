@@ -44,6 +44,7 @@ MonoBehaviour:
   - RPC_SetCorrectControllers
   - RPC_CommunicateTime
   - RPC_MoveBlock
+  - RPC_TellMainPlayerBonusStarWasCollected
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
