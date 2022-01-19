@@ -389,4 +389,53 @@ public class GameController : MonoBehaviour
                 return;
         }
     }
+
+    public void SaveBonusStars(int bonusStarNumber)
+    {
+        starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
+        switch (bonusStarNumber)
+        {
+            case 1:
+            {
+                if (starTracker.bonusStar1Got == false)
+                {
+                    starTracker.bonusStars += 1;
+                    starTracker.bonusStar1Got = true;
+                }
+
+                break;
+            }
+            case 2:
+            {
+                if (starTracker.bonusStar2Got == false)
+                {
+                    starTracker.bonusStars += 1;
+                    starTracker.bonusStar2Got = true;
+                }
+
+                break;
+            }
+            case 3:
+            {
+                if (starTracker.bonusStar3Got == false)
+                {
+                    starTracker.bonusStars += 1;
+                    starTracker.bonusStar3Got = true;
+                }
+
+                break;
+            }
+            case 4:
+            {
+                if (starTracker.bonusStar4Got == false)
+                {
+                    starTracker.bonusStars += 1;
+                    starTracker.bonusStar4Got = true;
+                }
+
+                break;
+            }
+        }
+        starTracker.SaveStars();
+    }
 }

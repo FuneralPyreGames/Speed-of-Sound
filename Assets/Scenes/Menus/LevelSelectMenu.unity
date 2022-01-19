@@ -5717,11 +5717,11 @@ MonoBehaviour:
   level9StarCount: {fileID: 1178644562}
   level10StarCount: {fileID: 1788447412}
   starCountInt: 0
-  jetDivStarUnlockCount: 0
-  rocketDivStarUnlockCount: 0
-  soundChampionshipStarUnlockCount: 0
-  testLevelStarUnlockCount: 0
-  theStormStarUnlockCount: 0
+  jetDivStarUnlockCount: 7
+  rocketDivStarUnlockCount: 12
+  soundChampionshipStarUnlockCount: 20
+  testLevelStarUnlockCount: 25
+  theStormStarUnlockCount: 45
 --- !u!1 &1323934609
 GameObject:
   m_ObjectHideFlags: 0

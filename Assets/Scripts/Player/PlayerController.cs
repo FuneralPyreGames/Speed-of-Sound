@@ -273,4 +273,19 @@ public class PlayerController : MonoBehaviour
     {
         playerControls.Disable();
     }
+
+    public void RPCToMainPlayer(int bonusStarNumber)
+    {
+        PV.RPC("RPC_TellMainPlayerBonusStarWasCollected", RpcTarget.Others, bonusStarNumber);
+    }
+    public void SaveBonusStar(int bonusStarNumber)
+    {
+        gameController.SaveBonusStars(bonusStarNumber);
+    }
+
+    [PunRPC]
+    private void RPC_TellMainPlayerBonusStarWasCollected(int bonusStarNumber)
+    {
+        SaveBonusStar(bonusStarNumber);
+    }
 }
