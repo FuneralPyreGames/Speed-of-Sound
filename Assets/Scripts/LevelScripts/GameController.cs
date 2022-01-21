@@ -384,8 +384,32 @@ public class GameController : MonoBehaviour
             case 1:
                 PhotonNetwork.LoadLevel("Level 1 - Starting Out");
                 return;
+            case 2:
+                PhotonNetwork.LoadLevel("Level 2 - Through The Walls");
+                return;
+            case 3:
+                PhotonNetwork.LoadLevel("Level 3 - Relay Race");
+                return;
+            case 4:
+                PhotonNetwork.LoadLevel("Level 4 - Into The Woods");
+                return;
+            case 5:
+                PhotonNetwork.LoadLevel("Level 5 - Beyond The Earth");
+                return;
             case 6:
                 PhotonNetwork.LoadLevel("Level 6 - Super Parkour Galaxy");
+                return;
+            case 7:
+                PhotonNetwork.LoadLevel("Level 7 - Up In Space");
+                return;
+            case 8:
+                PhotonNetwork.LoadLevel("Level 8 - The Championship");
+                return;
+            case 9:
+                PhotonNetwork.LoadLevel("Level 9 - Test Level");
+                return;
+            case 10:
+                PhotonNetwork.LoadLevel("Level 10 - The Storm");
                 return;
         }
     }
