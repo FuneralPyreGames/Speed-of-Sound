@@ -1498,3 +1498,125 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1557.236920 seconds.
+  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp32.png
+  artifactKey: Guid(436c5e63723127948af8857e903f658a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp32.png using Guid(436c5e63723127948af8857e903f658a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0f05ee9ffbd42169d89409dcad94395') in 0.082054 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp128.png
+  artifactKey: Guid(f00feafcf0675cd47a48f83ae42b06d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Photon/PhotonUnityNetworking/Icons/PunIconApp128.png using Guid(f00feafcf0675cd47a48f83ae42b06d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e686bec185dfb6025022e152d236cf22') in 0.059121 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.074467 seconds.
+  path: Assets/Scenes/Levels/(3) Rocket Division/Level 7 - Up In Space/ReflectionProbe-0.exr
+  artifactKey: Guid(fde044530e3dc4031b774836a0546e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(3) Rocket Division/Level 7 - Up In Space/ReflectionProbe-0.exr using Guid(fde044530e3dc4031b774836a0546e8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b541cee9b530d50c45ad806fef384f5') in 0.025673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-0.exr
+  artifactKey: Guid(802756c1fca682b40bd3df6434bc0b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-0.exr using Guid(802756c1fca682b40bd3df6434bc0b1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e46caa061a220b88815746d3a57df53d') in 0.012310 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Scenes/Levels/(5) Joy Division or Bonus Levels/Level 9 - Test Level/ReflectionProbe-0.exr
+  artifactKey: Guid(85639b4d4d58d4d6e8588d557f0950ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(5) Joy Division or Bonus Levels/Level 9 - Test Level/ReflectionProbe-0.exr using Guid(85639b4d4d58d4d6e8588d557f0950ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91cb10b7cac23d09251e1cd2f054a3c4') in 0.012638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.593433 seconds.
+  path: Assets/Scenes/Levels/(1) Racecar Division/Level 3 - Relay Race/ReflectionProbe-0.exr
+  artifactKey: Guid(5ada35de1a1ab95419f8a2f3f36c8ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(1) Racecar Division/Level 3 - Relay Race/ReflectionProbe-0.exr using Guid(5ada35de1a1ab95419f8a2f3f36c8ca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab69c67ccf1181e483aaa9a9d66ac466') in 0.014929 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.007686 seconds.
+  path: Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-1.exr
+  artifactKey: Guid(3d7747f4aee7fa649872c23523972cd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-1.exr using Guid(3d7747f4aee7fa649872c23523972cd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dabd345de6542aae6a6357b1762463a') in 0.016738 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-3.exr
+  artifactKey: Guid(4d39c3490528a314797421119eacf66a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-3.exr using Guid(4d39c3490528a314797421119eacf66a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab315092d0999af92eb711e032dbdf0f') in 0.013197 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-5.exr
+  artifactKey: Guid(366d7f72b2c184a449f18fce0cfd28b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-5.exr using Guid(366d7f72b2c184a449f18fce0cfd28b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91bdee16d16e2732d00d212185c1ff48') in 0.012482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-7.exr
+  artifactKey: Guid(d82a2ff0f01a6c841922702d669a691c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods/ReflectionProbe-7.exr using Guid(d82a2ff0f01a6c841922702d669a691c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c46daf7323f22c3855b54f0cfb537ea') in 0.016163 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.553395 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/WavySand/WavySand_smoothness.png
+  artifactKey: Guid(06e741348f141804faa9421cd9aa2c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/WavySand/WavySand_smoothness.png using Guid(06e741348f141804faa9421cd9aa2c27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7c292f49ad0c7fc4148b6d3f7f1f48d') in 0.021128 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/WoodenFlooring/WoodenFlooring_Roughness.png
+  artifactKey: Guid(3984a7f90de1c514f9acd270148bf7db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/WoodenFlooring/WoodenFlooring_Roughness.png using Guid(3984a7f90de1c514f9acd270148bf7db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab97b89cdd7b2675e67af318668eda7c') in 0.015559 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/WoodenFlooring/WoodenFlooring_Smoothness.png
+  artifactKey: Guid(671ffec92ccdc454bb4a1962709fdcf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/WoodenFlooring/WoodenFlooring_Smoothness.png using Guid(671ffec92ccdc454bb4a1962709fdcf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09e2861bc7d271a6f57417afad815531') in 0.011665 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.667643 seconds.
+  path: Assets/Materials/Real Materials/Textures/brass spotty metalness.png
+  artifactKey: Guid(e61476e94c3c57749a32051357f8d8e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Real Materials/Textures/brass spotty metalness.png using Guid(e61476e94c3c57749a32051357f8d8e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4de70596c4e30360e4436ca7f65dc6f') in 0.054362 seconds 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 5.33 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 33 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 33 unused Assets / (467.8 KB). Loaded Objects now: 6742.
+Memory consumption went from 121.2 MB to 120.7 MB.
+Total: 3.992200 ms (FindLiveObjects: 0.517800 ms CreateObjectMapping: 0.417700 ms MarkObjects: 2.877200 ms  DeleteObjects: 0.178800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 5.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 33 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 33 unused Assets / (459.0 KB). Loaded Objects now: 6742.
+Memory consumption went from 121.2 MB to 120.7 MB.
+Total: 4.943300 ms (FindLiveObjects: 0.510900 ms CreateObjectMapping: 0.489100 ms MarkObjects: 3.461600 ms  DeleteObjects: 0.480200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
