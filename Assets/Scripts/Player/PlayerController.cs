@@ -12,8 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameController gameController;
     [SerializeField] private GameObject cameraHolder, canvasForUI, countdownUI;
     [SerializeField] private Transform orientation;
-    [SerializeField] private Camera cam;
-    [SerializeField] private float mouseSensitivity, walkSpeed, sprintSpeed, jumpForce, smoothTime, wallDistance, minimumJumpHeight, wallRunGravity, wallRunJumpForce, fov, wallRunFOV, wallRunFOVTime, camTilt, camTiltTime;
+    [SerializeField] private float mouseSensitivity, walkSpeed, sprintSpeed, jumpForce, smoothTime, wallDistance, minimumJumpHeight, wallRunGravity, wallRunJumpForce, camTilt, camTiltTime;
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private int countdownTime = 3;
     private float Tilt {get; set;}
@@ -65,7 +64,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Destroy(GetComponentInChildren<Camera>().gameObject);
+            Destroy(cameraHolder);
             Destroy(rb);
             Destroy(canvasForUI);
         }
@@ -140,7 +139,6 @@ public class PlayerController : MonoBehaviour
         inWallRun = true;
         rb.useGravity = false;
         rb.AddForce(Vector3.down * wallRunGravity, ForceMode.Force);
-        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, wallRunFOV, wallRunFOVTime * Time.deltaTime);
         if (wallLeft)
         {
             Tilt = Mathf.Lerp(Tilt, -camTilt, camTiltTime * Time.deltaTime);
@@ -177,7 +175,6 @@ public class PlayerController : MonoBehaviour
     {
         inWallRun = false;
         rb.useGravity = true;
-        cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, fov, wallRunFOVTime * Time.deltaTime);
         Tilt = Mathf.Lerp(Tilt, 0, camTiltTime);
     }
     private void Look()

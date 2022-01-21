@@ -30,8 +30,6 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public override void OnConnectedToMaster()
     {
-        MainMenuAudio mainMenuAudio = GameObject.Find("MainMenuAudio").GetComponent<MainMenuAudio>();
-        mainMenuAudio.PlayConnectionSoundEffect();
         PhotonNetwork.JoinLobby();
         PhotonNetwork.AutomaticallySyncScene = true;
     }
@@ -70,8 +68,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
         startGameButton.SetActive(PhotonNetwork.IsMasterClient && PhotonNetwork.CountOfPlayers > 1);
         menuTweening.TweenCreateRoomToRoomMenu();
-        MainMenuAudio mainMenuAudio = GameObject.Find("MainMenuAudio").GetComponent<MainMenuAudio>();
-        mainMenuAudio.PlayJoinRoomSoundEffect();
     }
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
