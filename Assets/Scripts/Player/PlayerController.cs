@@ -256,11 +256,13 @@ public class PlayerController : MonoBehaviour
     {
         timerGoing = false;
         timerUI.SetActive(false);
+        
     }
     public void ExitLevel()
     {
         canMove = false;
         isLevelExited = true;
+        cameraHolder.SetActive(false);
     }
     private void OnEnable()
     {
