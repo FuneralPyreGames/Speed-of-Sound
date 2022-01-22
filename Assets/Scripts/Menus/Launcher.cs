@@ -35,6 +35,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedLobby()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Main Menu/Connected");
         menuTweening.ConnectingOverlayToConnectionMenu();
     }
     public void SetNickname()
@@ -56,6 +57,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom()
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/Main Menu/Room Joined");
         if(PhotonNetwork.IsMasterClient)
         {
             playerOneName.text = PhotonNetwork.NickName;
