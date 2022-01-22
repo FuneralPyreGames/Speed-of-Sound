@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="ParameterPreset" id="{01dacf17-046a-4909-8863-0bff224e5a8e}">
 		<property name="name">
-			<value>Parameter 1</value>
+			<value>Ground And Run Type</value>
 		</property>
 		<relationship name="folder">
 			<destination>{cc6f51d8-7c99-4aef-b3c1-487dbb73b4e0}</destination>
@@ -28,6 +28,9 @@
 		</property>
 		<property name="initialValue">
 			<value>0</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
 		</property>
 	</object>
 </objects>
