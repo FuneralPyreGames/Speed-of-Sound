@@ -64,6 +64,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         {
             playerOneName.text = PhotonNetwork.MasterClient.NickName;
             playerTwoName.text = PhotonNetwork.NickName;
+            menuTweening.MakeCurrentSection6();
         }
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
         startGameButton.SetActive(PhotonNetwork.IsMasterClient && PhotonNetwork.CountOfPlayers > 1);
@@ -80,6 +81,7 @@ public class Launcher : MonoBehaviourPunCallbacks
             playerTwoName.text = newPlayer.NickName;
             startGameButton.SetActive(PhotonNetwork.IsMasterClient);
         }
+        menuTweening.MakeCurrentSection6();
     }
     public override void OnMasterClientSwitched(Player newMasterClient)
     {

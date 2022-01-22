@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9573351, g: 0.69973606, b: 0.47198272, a: 1}
+  m_IndirectSpecularColor: {r: 0.95731795, g: 0.6997254, b: 0.4719818, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -970,14 +970,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!81 &168902704
-AudioListener:
+--- !u!114 &168902704
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168902699}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &187900664
 GameObject:
   m_ObjectHideFlags: 0
@@ -6162,6 +6168,13 @@ MonoBehaviour:
   creditsOverlay: {fileID: 888670021}
   roomMenu: {fileID: 1892209285}
   launcher: {fileID: 1169085787}
+  fmodEvent:
+    Guid:
+      Data1: -1674008217
+      Data2: 1150606033
+      Data3: -1119350370
+      Data4: -955234438
+    Path: event:/Songs/MainMenu
 --- !u!114 &1169085787
 MonoBehaviour:
   m_ObjectHideFlags: 0
