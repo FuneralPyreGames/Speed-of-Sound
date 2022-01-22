@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{64b06f73-4556-450c-ae5b-d7bcc7bcdd02}">
+		<property name="name">
+			<value>CurrentSection</value>
+		</property>
+		<relationship name="folder">
+			<destination>{cc6f51d8-7c99-4aef-b3c1-487dbb73b4e0}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{72ba3f2b-f207-47a1-a1a6-8a933c5cd238}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{72ba3f2b-f207-47a1-a1a6-8a933c5cd238}">
+		<property name="minimum">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>6</value>
+		</property>
+		<property name="initialValue">
+			<value>1</value>
+		</property>
+	</object>
+</objects>
