@@ -27,6 +27,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5887117364951952615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/Footsteps
+  Guid:
+    Data1: -1767871154
+    Data2: 1236166284
+    Data3: 613202876
+    Data4: -2107502147
+  Banks:
+  - {fileID: -2774679474317398356}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -3446654239355525775}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5101606083871586485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +70,10 @@ MonoBehaviour:
   Path: Speed Of Sound FMOD Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637784061693549251
+  lastModified: 637784623042718796
   FileSizes:
   - Name: Desktop
-    Value: 984
+    Value: 1104
   Exists: 1
 --- !u!114 &-4798989360942767894
 MonoBehaviour:
@@ -75,6 +103,36 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 80000
+--- !u!114 &-3446654239355525775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Footsteps/Ground And Run Type
+  m_EditorClassIdentifier: 
+  Name: Ground And Run Type
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 1814005142
+    data2: 2129136179
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Nature Walking
+  - Nature Running
+  - Metal Walking
+  - Metal Running
+  - NonMetal Walking
+  - NonMetal Running
+  Exists: 1
 --- !u!114 &-3280618325384948068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,10 +175,10 @@ MonoBehaviour:
   Path: Speed Of Sound FMOD Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637784061693542048
+  lastModified: 637784623042708608
   FileSizes:
   - Name: Desktop
-    Value: 1097184
+    Value: 2228736
   Exists: 1
 --- !u!114 &-482885902845987012
 MonoBehaviour:
@@ -169,12 +227,13 @@ MonoBehaviour:
   - {fileID: -482885902845987012}
   - {fileID: -3280618325384948068}
   - {fileID: -7895029944561934902}
+  - {fileID: -5887117364951952615}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2774679474317398356}
   StringsBanks:
   - {fileID: -5101606083871586485}
-  cacheTime: 637784061693549251
+  cacheTime: 637784623042718796
   cacheVersion: 10
 --- !u!114 &1083815981285341032
 MonoBehaviour:
@@ -196,7 +255,7 @@ MonoBehaviour:
   ID:
     data1: 2278334148
     data2: 1752470865
-  Type: 0
+  Type: 1
   IsGlobal: 0
   Labels: []
   Exists: 1

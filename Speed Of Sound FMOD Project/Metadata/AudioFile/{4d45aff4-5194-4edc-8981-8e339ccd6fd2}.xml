@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4d45aff4-5194-4edc-8981-8e339ccd6fd2}">
+		<property name="color">
+			<value>Purple</value>
+		</property>
+		<property name="assetPath">
+			<value>Fantozzi/MetalRunning.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.1284807256235831</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7db2015e-7414-4a10-9e57-4803138c8fda}</destination>
+		</relationship>
+	</object>
+</objects>

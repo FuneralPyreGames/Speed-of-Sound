@@ -15,6 +15,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSensitivity, walkSpeed, sprintSpeed, jumpForce, smoothTime, wallDistance, minimumJumpHeight, wallRunGravity, wallRunJumpForce, camTilt, camTiltTime;
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private int countdownTime = 3;
+
+    private enum CurrentTerrain
+    {
+        Nature,
+        Nonmetal,
+        Metal
+    };
+
+    private CurrentTerrain currentTerrain;
+    private FMOD.Studio.EventInstance footSteps;
+    public FMODUnity.EventReference fmodEvent;
     private float Tilt {get; set;}
     [SerializeField] private bool grounded;
     private RaycastHit leftWallHit, rightWallHit;
@@ -27,6 +38,8 @@ public class PlayerController : MonoBehaviour
     private PhotonView PV;
     public bool inWallRun;
     private PlayerManager playerManager;
+    public bool isMoving;
+    public bool isSprinting;
     [Header("Timer")]
     [SerializeField]
     private TMP_Text timerText;
@@ -190,6 +203,16 @@ public class PlayerController : MonoBehaviour
         playerControls.Movement.Sprint.started += _ => moveSpeed = sprintSpeed;
         playerControls.Movement.Sprint.canceled += _ => moveSpeed = walkSpeed;
         Vector3 moveDir = new Vector3((playerControls.Movement.GroundMovement.ReadValue<Vector2>().x), 0, (playerControls.Movement.GroundMovement.ReadValue<Vector2>().y)).normalized;
+        if (moveDir.x > 0 && moveDir.z > 0)
+        {
+            isMoving = true;
+            isSprinting = moveSpeed == sprintSpeed;
+        }
+        else
+        {
+            isMoving = false;
+            isSprinting = false;
+        }
         moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * moveSpeed, ref smoothMoveVelocity, smoothTime);
     }
     private void CheckForJumpInput()
@@ -216,7 +239,57 @@ public class PlayerController : MonoBehaviour
                 return;
             }
         }
+
+        if (isMoving && grounded)
+        {
+            DetermineTerrain();
+            SelectAndPlayFootsteps();
+        }
         rb.MovePosition(rb.position + transform.TransformDirection(moveAmount)* Time.fixedDeltaTime);
+    }
+
+    private void DetermineTerrain() // This function determines what ground type the player is on
+    {
+        RaycastHit[] hit;
+        hit = Physics.RaycastAll(transform.position, Vector3.down, 10.0f);
+        foreach (RaycastHit rayHit in hit)
+        {
+            if (rayHit.transform.gameObject.layer == LayerMask.NameToLayer("Nonmetal"))
+            {
+                currentTerrain = CurrentTerrain.Nonmetal;
+            }
+            else if (rayHit.transform.gameObject.layer == LayerMask.NameToLayer("Metal"))
+            {
+                currentTerrain = CurrentTerrain.Metal;
+            }
+            else if (rayHit.transform.gameObject.layer == LayerMask.NameToLayer("Nature"))
+            {
+                currentTerrain = CurrentTerrain.Nature;
+            }
+        }
+    }
+
+    private void SelectAndPlayFootsteps()
+    {
+        switch (currentTerrain)
+        {
+            case CurrentTerrain.Nonmetal:
+                PlayFootstep(isSprinting ? 5 : 4);
+                break;
+            case CurrentTerrain.Metal:
+                PlayFootstep(isSprinting ? 3 : 2);
+                break;
+            case CurrentTerrain.Nature:
+                PlayFootstep(isSprinting ? 1 : 0);
+                break;
+        }
+    }
+    private void PlayFootstep(int terrain)
+    {
+        footSteps = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        footSteps.setParameterByName("Ground And Run Type", terrain);
+        footSteps.start();
+        footSteps.release();
     }
     public void BeginCountdown()
     {

@@ -347,8 +347,8 @@ MonoBehaviour:
   sourceProjectPath: Speed Of Sound FMOD Project/Speed Of Sound FMOD Project.fspro
   sourceBankPath: Speed Of Sound FMOD Project/Build
   SourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
-  ShowBankRefreshWindow: 1
+  BankRefreshCooldown: 1
+  ShowBankRefreshWindow: 0
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
