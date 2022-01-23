@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     private CurrentTerrain currentTerrain;
     private FMOD.Studio.EventInstance footSteps;
     public FMODUnity.EventReference fmodEvent;
+    private float FMODTimer = 0.00f;
+    private float footstepSpeed = 0.3f;
+    public int previousParamater;
     private float Tilt {get; set;}
     [SerializeField] private bool grounded;
     private RaycastHit leftWallHit, rightWallHit;
@@ -238,12 +241,10 @@ public class PlayerController : MonoBehaviour
                 return;
             }
         }
-
         if (grounded)
         {
             DetermineTerrain();
         }
-
         if (moveAmount.x > 0.0000000000000000000000000f)
         {
             isMoving = true;
@@ -256,12 +257,54 @@ public class PlayerController : MonoBehaviour
         {
             isMoving = false;
         }
-
-        print("Is Moving = " + isMoving + " And Is Sprinting = " + isSprinting);
-        print("Player's move amount is " + moveAmount);
+        if (isMoving && grounded)
+        {
+            if (FMODTimer > footstepSpeed)
+            {
+                FMODTimer = 0.0f;
+                SelectAndPlayFootsteps();
+            }
+            FMODTimer += Time.deltaTime;
+        }
+        else if (!grounded && isMoving)
+        {
+            footSteps.stop(STOP_MODE.ALLOWFADEOUT);
+            footSteps.release();
+        }
+        //print("Is Moving = " + isMoving + " And Is Sprinting = " + isSprinting);
+        //print("Player's move amount is " + moveAmount);
         rb.MovePosition(rb.position + transform.TransformDirection(moveAmount)* Time.fixedDeltaTime);
     }
 
+    private void SelectAndPlayFootsteps()
+    {
+        switch (currentTerrain)
+        {
+            case CurrentTerrain.Nonmetal:
+                PlayFootstep(isSprinting ? 5 : 4);
+                break;
+        }
+    }
+    private void PlayFootstep(int terrain) 
+    {
+        if (PlaybackState(footSteps) == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            if (previousParamater != terrain)
+            {
+                footSteps.stop(STOP_MODE.ALLOWFADEOUT);
+                footSteps.release();
+            }
+            else
+            {
+                return;
+            }
+        }
+        footSteps = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        footSteps.setParameterByName("Ground And Run Type", terrain);
+        footSteps.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        footSteps.start();
+        previousParamater = terrain;
+    }
     private void DetermineTerrain() // This function determines what ground type the player is on
     {
         RaycastHit[] hit;
@@ -352,5 +395,11 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("RPC heard");
         SaveBonusStar(bonusStarNumber);
+    }
+    FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance instance) 
+    {
+        FMOD.Studio.PLAYBACK_STATE pS;
+        instance.getPlaybackState(out pS);
+        return pS;
     }
 }
