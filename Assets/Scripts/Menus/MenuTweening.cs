@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 
 public class MenuTweening : MonoBehaviour
@@ -168,5 +169,11 @@ public class MenuTweening : MonoBehaviour
     public void MakeCurrentSection6()
     {
         instance.setParameterByName("CurrentSection", 6);
+    }
+
+    public void StopMainMenuSong()
+    {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
     }
 }

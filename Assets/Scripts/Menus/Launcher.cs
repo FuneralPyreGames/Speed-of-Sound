@@ -112,6 +112,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     }
     public void StartGame()
     {
+        menuTweening.StopMainMenuSong();
         PhotonNetwork.LoadLevel("StartGame");
     }
 }
