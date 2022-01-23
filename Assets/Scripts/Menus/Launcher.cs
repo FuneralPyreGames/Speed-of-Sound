@@ -8,7 +8,7 @@ using TMPro;
 public class Launcher : MonoBehaviourPunCallbacks
 {
     public MenuTweening menuTweening;
-    public PhotonView photonView;
+    public PhotonView bhotonView;
     [SerializeField] private TMP_InputField nicknameInputField;
     [SerializeField] private TMP_InputField roomNameInputField;
     [SerializeField] private TMP_Text roomNameText;
@@ -116,7 +116,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
         {
             menuTweening.StopMainMenuSong();
-            photonView.RPC("RPC_StopMainMenuSong", RpcTarget.Others);
+            bhotonView.RPC("RPC_StopMainMenuSong", RpcTarget.Others);
         }
         PhotonNetwork.LoadLevel("StartGame");
     }

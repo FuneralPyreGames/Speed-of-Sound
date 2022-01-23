@@ -257,16 +257,17 @@ public class PlayerController : MonoBehaviour
         {
             isMoving = false;
         }
+
         if (isMoving && grounded)
         {
-            if (FMODTimer > footstepSpeed)
-            {
-                FMODTimer = 0.0f;
-                SelectAndPlayFootsteps();
-            }
-            FMODTimer += Time.deltaTime;
+            SelectAndPlayFootsteps();
         }
         else if (!grounded && isMoving)
+        {
+            footSteps.stop(STOP_MODE.ALLOWFADEOUT);
+            footSteps.release();
+        }
+        else if (!isMoving)
         {
             footSteps.stop(STOP_MODE.ALLOWFADEOUT);
             footSteps.release();

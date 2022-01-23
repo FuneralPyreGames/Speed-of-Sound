@@ -222,6 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6362691712947013399}
   - component: {fileID: 4106300058406315755}
+  - component: {fileID: 5855133174125043022}
   m_Layer: 0
   m_Name: VirtualCamera
   m_TagString: Untagged
@@ -283,6 +284,20 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 2254425084367085719}
+--- !u!114 &5855133174125043022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232183087803044909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &1572192838853453988
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,8 +584,18 @@ MonoBehaviour:
   camTiltTime: 0.4
   countdownText: {fileID: 5900021025681669515}
   countdownTime: 3
+  fmodEvent:
+    Guid:
+      Data1: -1767871154
+      Data2: 1236166284
+      Data3: 613202876
+      Data4: -2107502147
+    Path: event:/SFX/Player/Footsteps
+  previousParamater: 0
   grounded: 0
   inWallRun: 0
+  isMoving: 0
+  isSprinting: 0
   timerText: {fileID: 6105985731688836303}
   timerUI: {fileID: 6293550089348643717}
   totalSeconds: 0
