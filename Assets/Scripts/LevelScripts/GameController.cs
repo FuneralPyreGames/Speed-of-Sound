@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
@@ -32,6 +33,8 @@ public class GameController : MonoBehaviour
         playerTwoCongratsString;
 
     private bool notCalledYet = false;
+    public FMODUnity.EventReference levelSong;
+    private FMOD.Studio.EventInstance levelSongInstance;
     [Header("Times")]
     public int platinumTime;
     public int goldTime;
@@ -43,6 +46,8 @@ public class GameController : MonoBehaviour
     {
         //The game controller has to get the photon view component to ensure that the photon view can make calls as needed
         pv = GetComponent<PhotonView>();
+        levelSongInstance = FMODUnity.RuntimeManager.CreateInstance(levelSong);
+        levelSongInstance.start();
         //Upon awakening, the function GetPlayerControllers is called. This ensures that the GameController has the proper references to each player controller that it needs, so it knows that both have spawned in, and the game can start
         GetPlayerControllers();
     }
@@ -114,12 +119,12 @@ public class GameController : MonoBehaviour
         //If player one or player two exit the level, the game controller will mark it, and then make a call over the network to let the other player know you have exited the level
         if(firstPlayerControllerComponents.isLevelExited && !playerOneExited)
         {
-            Debug.Log("Player one exited level");
+            levelSongInstance.setParameterByName("End of Level", 1);
             PlayerOneExitedLevel();
         }
         if(secondPlayerControllerComponents.isLevelExited && !playerTwoExited)
         {
-            Debug.Log("Player two exited level");
+            levelSongInstance.setParameterByName("End of Level", 1);
             PlayerTwoExitedLevel();
         }
         if (playerOneExited && playerTwoExited && !notCalledYet)
@@ -367,6 +372,7 @@ public class GameController : MonoBehaviour
     }
     public void ExitLevel()
     {
+        pv.RPC("RPC_StopSong", RpcTarget.All);
         if (currentLevel == 8)
         {
             if (starsEarned == 1)
@@ -379,6 +385,7 @@ public class GameController : MonoBehaviour
     }
     public void RestartLevel()
     {
+        pv.RPC("RPC_StopSong", RpcTarget.All);
         switch (currentLevel)
         {
             case 1:
@@ -475,5 +482,11 @@ public class GameController : MonoBehaviour
             }
         }
         starTracker.SaveStars();
+    }
+    [PunRPC]
+    void RPC_StopSong()
+    {
+        levelSongInstance.stop(STOP_MODE.ALLOWFADEOUT);
+        levelSongInstance.release();
     }
 }

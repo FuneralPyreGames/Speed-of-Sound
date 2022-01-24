@@ -591,7 +591,6 @@ MonoBehaviour:
       Data3: 613202876
       Data4: -2107502147
     Path: event:/SFX/Player/Footsteps
-  previousParamater: 0
   grounded: 0
   inWallRun: 0
   isMoving: 0

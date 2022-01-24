@@ -259,7 +259,7 @@ public class PlayerController : MonoBehaviour
         {
             SelectAndPlayFootsteps();
         }
-        print("Is Moving = " + isMoving + " And Is Sprinting = " + isSprinting);
+        //print("Is Moving = " + isMoving + " And Is Sprinting = " + isSprinting);
         if (canMove)
         {
             rb.MovePosition(rb.position + transform.TransformDirection(moveAmount)* Time.fixedDeltaTime);

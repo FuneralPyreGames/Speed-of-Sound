@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{36be2dbb-78db-4e17-91b5-32152a991c66}">
+		<property name="assetPath">
+			<value>Juhani Junkala/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7db2015e-7414-4a10-9e57-4803138c8fda}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -703,7 +703,7 @@ PrefabInstance:
     - target: {fileID: 4237956333970964737, guid: 165bd68f87de74112ad1236e02884faf,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4237956333970964749, guid: 165bd68f87de74112ad1236e02884faf,
         type: 3}
@@ -2989,7 +2989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &762804398
 Transform:
   m_ObjectHideFlags: 0
@@ -4166,7 +4166,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh42122
+  m_Name: pb_Mesh67316
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4339,37 +4339,37 @@ PrefabInstance:
     - target: {fileID: 4910832207678496512, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.677553
+      value: -0.28710192
       objectReference: {fileID: 0}
     - target: {fileID: 4910832207678496512, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: 28.603714
       objectReference: {fileID: 0}
     - target: {fileID: 4910832207678496512, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.71971583
+      value: 1.705064
       objectReference: {fileID: 0}
     - target: {fileID: 4910832207678496512, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.7071068
+      value: 0.0002641678
       objectReference: {fileID: 0}
     - target: {fileID: 4910832207678496512, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.0032466857
       objectReference: {fileID: 0}
     - target: {fileID: 4910832207678496512, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: -0.7216727
       objectReference: {fileID: 0}
     - target: {fileID: 4910832207678496512, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.69222677
       objectReference: {fileID: 0}
     - target: {fileID: 4910832207678496512, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
@@ -4389,7 +4389,7 @@ PrefabInstance:
     - target: {fileID: 4910832207678496513, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
       propertyPath: field of view
-      value: 60
+      value: 62.7
       objectReference: {fileID: 0}
     - target: {fileID: 4910832207678496524, guid: 7597745d0059a3c4c802f81b9d1f2399,
         type: 3}
@@ -6026,8 +6026,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9175766782182521541, guid: 2aa70f6e582996745b601b43b26a6f1a,
         type: 3}
+      propertyPath: levelSong.Path
+      value: event:/Songs/Levels 1-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175766782182521541, guid: 2aa70f6e582996745b601b43b26a6f1a,
+        type: 3}
       propertyPath: participationTime
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175766782182521541, guid: 2aa70f6e582996745b601b43b26a6f1a,
+        type: 3}
+      propertyPath: levelSong.Guid.Data1
+      value: 1030970488
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175766782182521541, guid: 2aa70f6e582996745b601b43b26a6f1a,
+        type: 3}
+      propertyPath: levelSong.Guid.Data2
+      value: 1179458282
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175766782182521541, guid: 2aa70f6e582996745b601b43b26a6f1a,
+        type: 3}
+      propertyPath: levelSong.Guid.Data3
+      value: 2108827271
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175766782182521541, guid: 2aa70f6e582996745b601b43b26a6f1a,
+        type: 3}
+      propertyPath: levelSong.Guid.Data4
+      value: 1631007370
       objectReference: {fileID: 0}
     - target: {fileID: 9175766782182521542, guid: 2aa70f6e582996745b601b43b26a6f1a,
         type: 3}

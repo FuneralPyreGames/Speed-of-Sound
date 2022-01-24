@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{93087fce-d666-4075-b92a-b7a2c3da9778}">
+		<property name="color">
+			<value>Yellow</value>
+		</property>
+		<property name="assetPath">
+			<value>Juhani Junkala/Juhani Junkala [Retro Game Music Pack] Level 3.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>81.895759637188206</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7db2015e-7414-4a10-9e57-4803138c8fda}</destination>
+		</relationship>
+	</object>
+</objects>
