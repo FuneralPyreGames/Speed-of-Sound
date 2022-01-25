@@ -1947,3 +1947,167 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011728 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.197 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1198ms)
+		BeginReloadAssembly (140ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (971ms)
+			LoadAssemblies (82ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (264ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (524ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (76ms)
+				ProcessInitializeOnLoadAttributes (368ms)
+				ProcessInitializeOnLoadMethodAttributes (61ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.19 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5876 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 108 unused Assets / (0.8 MB). Loaded Objects now: 6791.
+Memory consumption went from 233.7 MB to 232.9 MB.
+Total: 4.427600 ms (FindLiveObjects: 0.465000 ms CreateObjectMapping: 0.393700 ms MarkObjects: 3.185800 ms  DeleteObjects: 0.382500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 25.15 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 90 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 90 unused Assets / (0.8 MB). Loaded Objects now: 6791.
+Memory consumption went from 114.3 MB to 113.5 MB.
+Total: 7.509600 ms (FindLiveObjects: 1.018500 ms CreateObjectMapping: 1.174600 ms MarkObjects: 4.894700 ms  DeleteObjects: 0.421200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 18.38 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 90 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 90 unused Assets / (0.8 MB). Loaded Objects now: 6791.
+Memory consumption went from 114.3 MB to 113.5 MB.
+Total: 4.533700 ms (FindLiveObjects: 0.555700 ms CreateObjectMapping: 0.521700 ms MarkObjects: 2.979700 ms  DeleteObjects: 0.475800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 21.94 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 90 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 90 unused Assets / (0.8 MB). Loaded Objects now: 6791.
+Memory consumption went from 114.3 MB to 113.5 MB.
+Total: 6.174200 ms (FindLiveObjects: 1.422500 ms CreateObjectMapping: 0.711900 ms MarkObjects: 3.610000 ms  DeleteObjects: 0.428200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 541.175131 seconds.
+  path: Assets/Images/Level Images/Level 1.png
+  artifactKey: Guid(5c166154140cb4c788889cef4a4b7075) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Level Images/Level 1.png using Guid(5c166154140cb4c788889cef4a4b7075) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4a2a8c351619384b83031c874e9d56f') in 0.139250 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Images/Level Images/Level 3.png
+  artifactKey: Guid(951df8f18102e4c4e998198907a3b403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Level Images/Level 3.png using Guid(951df8f18102e4c4e998198907a3b403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a9b947ffe79ec3a6345f93cf2f1dd78') in 0.046522 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Images/Level Images/Level 4.png
+  artifactKey: Guid(d2ccfa6cf3bdf4bccbd1e4546558d6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Level Images/Level 4.png using Guid(d2ccfa6cf3bdf4bccbd1e4546558d6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b8d3619421dc5e3cd077360c4fecf64') in 0.049092 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.323688 seconds.
+  path: Assets/Images/fmod-logo.svg
+  artifactKey: Guid(52c2d4d54cc494747ad531ce3189939b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/fmod-logo.svg using Guid(52c2d4d54cc494747ad531ce3189939b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2e89d20633725592fbe3f04fdb1ffc9') in 0.005357 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.767555 seconds.
+  path: Assets/Images/FMOD Logo White - Black Background.png
+  artifactKey: Guid(ea5ea916b7774d845868690f25199b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/FMOD Logo White - Black Background.png using Guid(ea5ea916b7774d845868690f25199b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86e249556be5f61376f92b6e368aaa7b') in 0.009973 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.227630 seconds.
+  path: Assets/Images/FMOD Logo Black - White Background.png
+  artifactKey: Guid(8c00831d4b5edba4b93601b4036b43b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/FMOD Logo Black - White Background.png using Guid(8c00831d4b5edba4b93601b4036b43b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79231f74dfaa894d499fe30d02c9c303') in 0.012292 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.605320 seconds.
+  path: Assets/Images/FMOD Logo Black - White Background.png
+  artifactKey: Guid(8c00831d4b5edba4b93601b4036b43b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/FMOD Logo Black - White Background.png using Guid(8c00831d4b5edba4b93601b4036b43b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ade1d3d50952ecf7017d038f03ccb78d') in 0.019702 seconds 
