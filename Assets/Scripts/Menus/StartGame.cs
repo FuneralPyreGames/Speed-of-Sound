@@ -22,7 +22,7 @@ public class StartGame : MonoBehaviour
         starTracker.testLevelStarUnlockCount = 20;
         starTracker.theStormStarUnlockCount = 35;
         starTracker.ResetStars();
-        PhotonNetwork.LoadLevel("LevelSelectMenu");
+        PhotonNetwork.LoadLevel("Intro");
     }
     public void StartHardGame()
     {
@@ -33,7 +33,7 @@ public class StartGame : MonoBehaviour
         starTracker.testLevelStarUnlockCount = 25;
         starTracker.theStormStarUnlockCount = 50;
         starTracker.ResetStars();
-        PhotonNetwork.LoadLevel("LevelSelectMenu");
+        PhotonNetwork.LoadLevel("Intro");
     }
     public void LoadGame()
     {
