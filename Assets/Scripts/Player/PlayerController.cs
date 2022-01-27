@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSensitivity, walkSpeed, sprintSpeed, jumpForce, smoothTime, wallDistance, minimumJumpHeight, wallRunGravity, wallRunJumpForce, camTilt, camTiltTime;
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private int countdownTime = 3;
+    [SerializeField] float maxSpeed = 8;
 
     private enum CurrentTerrain
     {
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
     private TimeSpan timePlaying;
     public int totalSeconds;
     public string timePlayingStr;
+    private bool rBGravity = true;
+    public float maxWallRunTime = .4f;
     private void Awake()
     {
         if(!isInSinglePlayerTestMode)
@@ -150,8 +153,16 @@ public class PlayerController : MonoBehaviour
     }
     private void StartWallRun()
     {
+        if(inWallRun == false)
+        {
+            rBGravity = false;
+            StartCoroutine("LimitWallRunTime");
+        }
         inWallRun = true;
-        rb.useGravity = false;
+        if(rBGravity == false)
+        {
+            rb.useGravity = false;
+        }
         rb.AddForce(Vector3.down * wallRunGravity, ForceMode.Force);
         if (wallLeft)
         {
@@ -187,9 +198,17 @@ public class PlayerController : MonoBehaviour
     }
     private void StopWallRun()
     {
+        StopCoroutine("LimitWallRunTime");
         inWallRun = false;
         rb.useGravity = true;
+        rBGravity = true;
         Tilt = Mathf.Lerp(Tilt, 0, camTiltTime);
+    }
+    public IEnumerator LimitWallRunTime()
+    {
+        yield return new WaitForSeconds(maxWallRunTime);
+        rb.useGravity = true;
+        yield return null;
     }
     private void Look()
     {
@@ -263,6 +282,11 @@ public class PlayerController : MonoBehaviour
         if (canMove)
         {
             rb.MovePosition(rb.position + transform.TransformDirection(moveAmount)* Time.fixedDeltaTime);
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+            }
+            Debug.Log(rb.velocity.magnitude);
         }
     }
 
