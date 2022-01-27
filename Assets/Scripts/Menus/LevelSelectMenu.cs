@@ -5,8 +5,9 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine.Serialization;
+using UnityEngine.SceneManagement;
 
-public class LevelSelectMenu : MonoBehaviour
+public class LevelSelectMenu : MonoBehaviourPunCallbacks
 {
     public GameObject divisionChoice;
     [FormerlySerializedAs("racecarDivision")] public GameObject raceCarDivision;
@@ -28,6 +29,7 @@ public class LevelSelectMenu : MonoBehaviour
     public int testLevelStarUnlockCount = 25;
 
     public int theStormStarUnlockCount = 45;
+    //public PhotonView photonView;
 
     private void Awake()
     {
@@ -224,5 +226,22 @@ public class LevelSelectMenu : MonoBehaviour
             return;
         }
         PhotonNetwork.LoadLevel("Level 10 - The Storm");
+    }
+    public void ExitGame()
+    {
+        photonView.RPC("RPC_Disconnect", RpcTarget.All);
+    }
+    [PunRPC]
+    void RPC_Disconnect()
+    {
+        PhotonNetwork.Disconnect();
+    }
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        photonView.RPC("RPC_Disconnect", RpcTarget.All);
     }
 }

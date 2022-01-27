@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour
         playerTwoEndLevelStarsString,
         playerOneCongratsString,
         playerTwoCongratsString;
-
+    public TMP_Text platinumTimeStr, goldTimeStr, silverTimeStr, bronzeTimeStr, participationTimeStr;
     private bool notCalledYet = false;
     public FMODUnity.EventReference levelSong;
     private FMOD.Studio.EventInstance levelSongInstance;
@@ -482,6 +482,14 @@ public class GameController : MonoBehaviour
             }
         }
         starTracker.SaveStars();
+    }
+    public void OpenTimesDisplay()
+    {
+        platinumTimeStr.text = platinumTime.ToString() + " Seconds";
+        goldTimeStr.text = goldTime.ToString() + " Seconds";
+        silverTimeStr.text = silverTime.ToString() + " Seconds";
+        bronzeTimeStr.text = bronzeTime.ToString() + " Seconds";
+        participationTimeStr.text = participationTime.ToString() + " Seconds";
     }
     [PunRPC]
     void RPC_StopSong()

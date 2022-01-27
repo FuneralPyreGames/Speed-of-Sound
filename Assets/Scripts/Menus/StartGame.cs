@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
-public class StartGame : MonoBehaviour
+public class StartGame : MonoBehaviourPunCallbacks
 {
     public GameObject startGame;
+    //public PhotonView photonView;
     private void Awake()
     {
         if(PhotonNetwork.IsMasterClient)
@@ -44,5 +47,22 @@ public class StartGame : MonoBehaviour
             return;
         }
         PhotonNetwork.LoadLevel("LevelSelectMenu");
+    }
+    public void ExitGame()
+    {
+        photonView.RPC("RPC_Disconnect", RpcTarget.All);
+    }
+    [PunRPC]
+    void RPC_Disconnect()
+    {
+        PhotonNetwork.Disconnect();
+    }
+    public override void OnDisconnected(DisconnectCause cause)
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        photonView.RPC("RPC_Disconnect", RpcTarget.All);
     }
 }

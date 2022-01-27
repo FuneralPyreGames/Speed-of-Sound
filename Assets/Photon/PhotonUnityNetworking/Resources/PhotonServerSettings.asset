@@ -48,6 +48,7 @@ MonoBehaviour:
   - RPC_StopMainMenuSong
   - <SaveBonusStars>g__RPC_StopSong|51_0
   - RPC_StopSong
+  - RPC_Disconnect
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
