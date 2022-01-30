@@ -584,6 +584,7 @@ MonoBehaviour:
   camTiltTime: 0.4
   countdownText: {fileID: 5900021025681669515}
   countdownTime: 3
+  maxSpeed: 8
   fmodEvent:
     Guid:
       Data1: -1767871154
@@ -599,6 +600,7 @@ MonoBehaviour:
   timerUI: {fileID: 6293550089348643717}
   totalSeconds: 0
   timePlayingStr: 
+  maxWallRunTime: 0.4
 --- !u!54 &4237956333970964751
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
@@ -35,6 +36,7 @@ public class GameController : MonoBehaviour
     private bool notCalledYet = false;
     public FMODUnity.EventReference levelSong;
     private FMOD.Studio.EventInstance levelSongInstance;
+    public GameObject bonusStarGotten;
     [Header("Times")]
     public int platinumTime;
     public int goldTime;
@@ -433,6 +435,7 @@ public class GameController : MonoBehaviour
                 Debug.Log(starTracker.bonusStar1Got);
                 if (starTracker.bonusStar1Got == false)
                 {
+                    StartCoroutine(SeeBonusStarGet());
                     Debug.Log("Got bonus star one!");
                     starTracker.bonusStars += 1;
                     starTracker.bonusStar1Got = true;
@@ -446,6 +449,7 @@ public class GameController : MonoBehaviour
                 Debug.Log(starTracker.bonusStar2Got);
                 if (starTracker.bonusStar2Got == false)
                 {
+                    StartCoroutine(SeeBonusStarGet());
                     Debug.Log("Got bonus star two!");
                     starTracker.bonusStars += 1;
                     starTracker.bonusStar2Got = true;
@@ -459,6 +463,7 @@ public class GameController : MonoBehaviour
                 Debug.Log(starTracker.bonusStar3Got);
                 if (starTracker.bonusStar3Got == false)
                 {
+                    StartCoroutine(SeeBonusStarGet());
                     Debug.Log("Got bonus star three!");
                     starTracker.bonusStars += 1;
                     starTracker.bonusStar3Got = true;
@@ -472,6 +477,7 @@ public class GameController : MonoBehaviour
                 Debug.Log(starTracker.bonusStar4Got);
                 if (starTracker.bonusStar4Got == false)
                 {
+                    StartCoroutine(SeeBonusStarGet());
                     Debug.Log("Got bonus star four!");
                     starTracker.bonusStars += 1;
                     starTracker.bonusStar4Got = true;
@@ -490,6 +496,15 @@ public class GameController : MonoBehaviour
         silverTimeStr.text = silverTime.ToString() + " Seconds";
         bronzeTimeStr.text = bronzeTime.ToString() + " Seconds";
         participationTimeStr.text = participationTime.ToString() + " Seconds";
+    }
+
+    private IEnumerator SeeBonusStarGet()
+    {
+        bonusStarGotten.SetActive(true);
+        LeanTween.moveLocalX(bonusStarGotten, 0, 1.5f);
+        yield return new WaitForSeconds(3f);
+        LeanTween.moveLocalX(bonusStarGotten, 2500f, 1.5f);
+        yield return null;
     }
     [PunRPC]
     void RPC_StopSong()
