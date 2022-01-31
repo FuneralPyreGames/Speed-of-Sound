@@ -163,3 +163,98 @@ Received Import Request.
   path: Assets/Prefabs/GameController.prefab
   artifactKey: Guid(2aa70f6e582996745b601b43b26a6f1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/GameController.prefab using Guid(2aa70f6e582996745b601b43b26a6f1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b100c188ebe6a2968c88de6ca0d77d67') in 0.079409 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011487 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.14 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.306 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1306ms)
+		BeginReloadAssembly (130ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (1093ms)
+			LoadAssemblies (81ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (266ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (53ms)
+			SetupLoadedEditorAssemblies (626ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (88ms)
+				ProcessInitializeOnLoadAttributes (441ms)
+				ProcessInitializeOnLoadMethodAttributes (74ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.38 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5877 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 110 unused Assets / (0.8 MB). Loaded Objects now: 6446.
+Memory consumption went from 233.1 MB to 232.3 MB.
+Total: 4.989400 ms (FindLiveObjects: 0.582200 ms CreateObjectMapping: 0.725200 ms MarkObjects: 3.189800 ms  DeleteObjects: 0.491300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 456.858210 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_YFliped_Normal.png
+  artifactKey: Guid(185ea4de8a5e15446a84d3e1a0e26db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_YFliped_Normal.png using Guid(185ea4de8a5e15446a84d3e1a0e26db9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ecb1048e137c113c4cc9c01790e3c49') in 0.097847 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_Smoothness.png
+  artifactKey: Guid(ae834f1f24a1f1f459d07aae04d05eb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_Smoothness.png using Guid(ae834f1f24a1f1f459d07aae04d05eb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0edbace1b16e1032eed41f4d9ef59ce3') in 0.021064 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.481493 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_normal.png
+  artifactKey: Guid(9aadb6fe23a7254408035437838d84f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_normal.png using Guid(9aadb6fe23a7254408035437838d84f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03bf696b57c1bd992a0454f2eb264ac1') in 0.026772 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_Smoothness.png
+  artifactKey: Guid(c6f2645d1d250954998a59d62ef2403e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_Smoothness.png using Guid(c6f2645d1d250954998a59d62ef2403e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39e1eeea972261c1a5fb4ab50cd38ddf') in 0.014666 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_height.png
+  artifactKey: Guid(30b8291384f7e02419ca3179c716dec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_height.png using Guid(30b8291384f7e02419ca3179c716dec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a7b02ef06303bf0a88dcabee02c629') in 0.028804 seconds 

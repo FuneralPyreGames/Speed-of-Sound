@@ -163,3 +163,140 @@ Received Import Request.
   path: Assets/Prefabs/PlayerControllerForTesting.prefab
   artifactKey: Guid(d6a30b30770454699806f6e058014926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/PlayerControllerForTesting.prefab using Guid(d6a30b30770454699806f6e058014926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a02331c19839b7ae577232b728b965a6') in 0.328790 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 103.077015 seconds.
+  path: Assets/StreamingAssets/Master.strings.bank
+  artifactKey: Guid(188c55e6690a04485a80c67864a303ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/StreamingAssets/Master.strings.bank using Guid(188c55e6690a04485a80c67864a303ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b202cd1a2f099d2273f5aa74395561c9') in 0.004008 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.426393 seconds.
+  path: Assets/StreamingAssets/Master.bank
+  artifactKey: Guid(5dc913e4d223048998ff489f83c1902e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/StreamingAssets/Master.bank using Guid(5dc913e4d223048998ff489f83c1902e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec6eca4520c631aa302826bb9fe1806e') in 0.001499 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.460227 seconds.
+  path: Assets/Materials/SkySeries Freebie/FreebieHdri/SunlessCirruscover4k.hdr
+  artifactKey: Guid(99af420a4ccafa74abdc47436d8b0685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SkySeries Freebie/FreebieHdri/SunlessCirruscover4k.hdr using Guid(99af420a4ccafa74abdc47436d8b0685) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58e92be07e677087a56aa9d64c6c5729') in 0.095105 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.791570 seconds.
+  path: Assets/Materials/SkySeries Freebie/FreebieHdri/AmbienceExposure4k.hdr
+  artifactKey: Guid(c9bc6cdb7a2e78b4c85ae74715b0a355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SkySeries Freebie/FreebieHdri/AmbienceExposure4k.hdr using Guid(c9bc6cdb7a2e78b4c85ae74715b0a355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c15b37057aa2a0ce1a17e388d926d39d') in 0.052101 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.557595 seconds.
+  path: Assets/Materials/SkySeries Freebie/FreebieHdri/DayInTheClouds4k.hdr
+  artifactKey: Guid(90196f2c2d8d2f2448717676e1a09894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/SkySeries Freebie/FreebieHdri/DayInTheClouds4k.hdr using Guid(90196f2c2d8d2f2448717676e1a09894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2026002cc5c4bb70c78c1ab9a51ed951') in 0.042130 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.673804 seconds.
+  path: Assets/Scenes/Levels/(2) Jet Division/Level 5 - Beyond The Earth.unity
+  artifactKey: Guid(f38948b0287612741a7e118595a9da19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(2) Jet Division/Level 5 - Beyond The Earth.unity using Guid(f38948b0287612741a7e118595a9da19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40ed81e6409b8cb28ba457152fbb71ef') in 0.002589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.330675 seconds.
+  path: Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods.unity
+  artifactKey: Guid(99e9b858c651b47f8b1a9a13d1e5d2a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Levels/(2) Jet Division/Level 4 - Into The Woods.unity using Guid(99e9b858c651b47f8b1a9a13d1e5d2a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f320d7e0796d46fc2476becd3865a7e') in 0.001507 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011400 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Unity Projects\Speed-of-Sound\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.46 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.462 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1463ms)
+		BeginReloadAssembly (153ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (47ms)
+		EndReloadAssembly (1225ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (271ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (628ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (84ms)
+				ProcessInitializeOnLoadAttributes (445ms)
+				ProcessInitializeOnLoadMethodAttributes (76ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (27ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.24 ms, found 5 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5887 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 105 unused Assets / (423.7 KB). Loaded Objects now: 6587.
+Memory consumption went from 339.7 MB to 339.2 MB.
+Total: 4.242800 ms (FindLiveObjects: 0.495000 ms CreateObjectMapping: 0.442800 ms MarkObjects: 3.102200 ms  DeleteObjects: 0.202000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 338.958478 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_Albedo.png
+  artifactKey: Guid(133dc91bc0027424f846f4cff389cb9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_Albedo.png using Guid(133dc91bc0027424f846f4cff389cb9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2de20d874f08b36aa319b435cf8dd8c2') in 0.087112 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_AO.png
+  artifactKey: Guid(d48b0ca5ba64be44396e2336c27b3c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_AO.png using Guid(d48b0ca5ba64be44396e2336c27b3c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3643b18fd5652f7ba25af21216242263') in 0.019370 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_Height.png
+  artifactKey: Guid(df3add141d9bccf4e97ff6ab6c319438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DryRockyDirt/DryRockyDirt_Height.png using Guid(df3add141d9bccf4e97ff6ab6c319438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6dc857fba97b69c78e303f489dc4866') in 0.029134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.460694 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_Albedo.png
+  artifactKey: Guid(40d7fbe8ea051d34eba523ba288c3dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_Albedo.png using Guid(40d7fbe8ea051d34eba523ba288c3dee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a82911bc74dc7e3d2e7754198e9a8fe') in 0.025803 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_AO.png
+  artifactKey: Guid(72978bae7d861354393f0406a617cdac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/WorldMaterialsFree/Resource Files/DesertSandBrick/DesertSandBricks_AO.png using Guid(72978bae7d861354393f0406a617cdac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3dbcc3719b17b161a321311696542ba') in 0.031592 seconds 
