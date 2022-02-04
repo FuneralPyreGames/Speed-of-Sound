@@ -198,6 +198,12 @@ public class MenuTweening : MonoBehaviour
         LeanTween.moveLocalX(connectionMenu, 0, .35f);
     }
 
+    public void TweenRoomMenuToNothing()
+    {
+        LeanTween.moveLocalY(roomMenu, -1000, .35f);
+        roomMenu.GetComponent<CanvasGroup>().interactable = false;
+    }
+
     public void MakeCurrentSection6()
     {
         instance.setParameterByName("CurrentSection", 6);

@@ -118,6 +118,7 @@ public class Launcher : MonoBehaviourPunCallbacks
             menuTweening.StopMainMenuSong();
             bhotonView.RPC("RPC_StopMainMenuSong", RpcTarget.Others);
         }
+        menuTweening.TweenRoomMenuToNothing();
         PhotonNetwork.LoadLevel("StartGame");
     }
 

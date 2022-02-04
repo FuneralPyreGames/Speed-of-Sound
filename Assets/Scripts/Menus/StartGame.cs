@@ -18,6 +18,7 @@ public class StartGame : MonoBehaviourPunCallbacks
     }
     public void StartEasyGame()
     {
+        LeanTween.moveLocalY(startGame, -2000, 1f);
         StarTracker starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
         starTracker.jetDivStarUnlockCount = 6;
         starTracker.rocketDivStarUnlockCount = 10;
@@ -29,6 +30,7 @@ public class StartGame : MonoBehaviourPunCallbacks
     }
     public void StartHardGame()
     {
+        LeanTween.moveLocalY(startGame, -2000, 1f);
         StarTracker starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
         starTracker.jetDivStarUnlockCount = 8;
         starTracker.rocketDivStarUnlockCount = 16;
@@ -46,6 +48,7 @@ public class StartGame : MonoBehaviourPunCallbacks
         {
             return;
         }
+        LeanTween.moveLocalY(startGame, -2000, 1f);
         PhotonNetwork.LoadLevel("LevelSelectMenu");
     }
     public void ExitGame()

@@ -43,18 +43,6 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
             soundChampionshipStarUnlockCount = starTracker.soundChampionshipStarUnlockCount;
             testLevelStarUnlockCount = starTracker.testLevelStarUnlockCount;
             theStormStarUnlockCount = starTracker.theStormStarUnlockCount;
-            //if(starCountInt >= jetDivStarUnlockCount)
-            //{
-              //  jetDivisionUnlockCount.text = "Unlocked!";
-                //if (starCountInt >= rocketDivStarUnlockCount)
-                //{
-                  //  rocketDivisionUnlockCount.text = "Unlocked!";
-                    //if (starCountInt >= soundChampionshipStarUnlockCount)
-                    //{
-                     //   soundChampionshipUnlockCount.text = "Unlocked!";
-                   //}
-                //}
-           // }
             if(starCountInt >= jetDivStarUnlockCount)
             {
                 jetDivisionUnlockCount.text = "Unlocked!";
@@ -90,11 +78,15 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
         level3StarCount.text = starTracker.level3Stars.ToString() + " Stars";
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(raceCarDivision, 0, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = false;
+        raceCarDivision.GetComponent<CanvasGroup>().interactable = true;
     }
     public void CloseRacecarDivision()
     {
         LeanTween.moveLocalY(divisionChoice, 0, .35f);
         LeanTween.moveLocalX(raceCarDivision, -2000, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = true;
+        raceCarDivision.GetComponent<CanvasGroup>().interactable = false;
     }
     public void LoadLevel1()
     {
@@ -118,11 +110,15 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
         level5StarCount.text = starTracker.level5Stars.ToString() + " Stars";
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(jetDivision, 0, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = false;
+        jetDivision.GetComponent<CanvasGroup>().interactable = true;
     }
     public void CloseJetDivision()
     {
         LeanTween.moveLocalY(divisionChoice, 0, .35f);
         LeanTween.moveLocalX(jetDivision, -2000, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = true;
+        jetDivision.GetComponent<CanvasGroup>().interactable = false;
     }
     public void LoadLevel4()
     {
@@ -142,11 +138,15 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
         level7StarCount.text = starTracker.level7Stars.ToString() + " Stars";
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(rocketDivision, 0, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = false;
+        rocketDivision.GetComponent<CanvasGroup>().interactable = true;
     }
     public void CloseRocketDivision()
     {
         LeanTween.moveLocalY(divisionChoice, 0, .35f);
         LeanTween.moveLocalX(rocketDivision, -2000, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = true;
+        rocketDivision.GetComponent<CanvasGroup>().interactable = false;
     }
     public void LoadLevel6()
     {
@@ -168,12 +168,16 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
         level8StarCount.text = starTracker.level8Stars.ToString() + " Stars";
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(soundChampionship, 0, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = false;
+        soundChampionship.GetComponent<CanvasGroup>().interactable = true;
     }
 
     public void CloseSoundChampionship()
     {
         LeanTween.moveLocalY(divisionChoice, 0, .35f);
         LeanTween.moveLocalX(soundChampionship, -2000, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = true;
+        soundChampionship.GetComponent<CanvasGroup>().interactable = false;
     }
 
     public void LoadLevel8()
@@ -203,11 +207,15 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
         }
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(bonusContent, 0, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = false;
+        bonusContent.GetComponent<CanvasGroup>().interactable = true;
     }
     public void CloseBonusContent()
     {
         LeanTween.moveLocalY(divisionChoice, 0, .35f);
         LeanTween.moveLocalX(bonusContent, -2000, .35f);
+        divisionChoice.GetComponent<CanvasGroup>().interactable = true;
+        bonusContent.GetComponent<CanvasGroup>().interactable = false;
     }
 
     public void LoadLevel9()
@@ -234,6 +242,7 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
     [PunRPC]
     void RPC_Disconnect()
     {
+        LeanTween.moveLocalY(divisionChoice, -2000f, 1f);
         PhotonNetwork.Disconnect();
     }
     public override void OnDisconnected(DisconnectCause cause)
