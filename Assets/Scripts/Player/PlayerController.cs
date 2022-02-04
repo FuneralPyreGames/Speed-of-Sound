@@ -76,6 +76,8 @@ public class PlayerController : MonoBehaviour
             {
                 amMasterPlayer = true;
             }
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             amLocalPlayer = true;
             return;
         }
@@ -380,6 +382,8 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         isLevelExited = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         cameraHolder.SetActive(false);
     }
     private void OnEnable()
