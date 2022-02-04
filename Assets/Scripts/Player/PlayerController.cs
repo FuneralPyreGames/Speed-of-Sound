@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using FMOD.Studio;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 public class PlayerController : MonoBehaviour
@@ -26,17 +24,18 @@ public class PlayerController : MonoBehaviour
     };
 
     private CurrentTerrain currentTerrain;
-    private FMOD.Studio.EventInstance footSteps;
+    private EventInstance footSteps;
     public FMODUnity.EventReference fmodEvent;
     private float Tilt {get; set;}
     [SerializeField] private bool grounded;
     private RaycastHit leftWallHit, rightWallHit;
-    private bool wallLeft, wallRight = false;
+    private bool wallLeft, wallRight;
     private float verticalLookRotation;
     private float moveSpeed = 5;
     private Vector3 moveAmount;
     private Vector3 smoothMoveVelocity;
     private Rigidbody rb;
+    // ReSharper disable once InconsistentNaming
     private PhotonView PV;
     public bool inWallRun;
     private PlayerManager playerManager;
@@ -47,7 +46,7 @@ public class PlayerController : MonoBehaviour
     private TMP_Text timerText;
     public GameObject timerUI;
     private float elapsedTime;
-    private bool timerGoing = false;
+    private bool timerGoing;
     private TimeSpan timePlaying;
     public int totalSeconds;
     public string timePlayingStr;
@@ -79,7 +78,6 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             amLocalPlayer = true;
-            return;
         }
         else
         {
@@ -158,7 +156,7 @@ public class PlayerController : MonoBehaviour
         if(inWallRun == false)
         {
             rBGravity = false;
-            StartCoroutine("LimitWallRunTime");
+            StartCoroutine(nameof(LimitWallRunTime));
         }
         inWallRun = true;
         if(rBGravity == false)
@@ -200,7 +198,7 @@ public class PlayerController : MonoBehaviour
     }
     private void StopWallRun()
     {
-        StopCoroutine("LimitWallRunTime");
+        StopCoroutine(nameof(LimitWallRunTime));
         inWallRun = false;
         rb.useGravity = true;
         rBGravity = true;
@@ -214,6 +212,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Look()
     {
+        // ReSharper disable once Unity.InefficientMultiplicationOrder
         transform.Rotate((Vector3.up * playerControls.Movement.LookX.ReadValue<float>()) * mouseSensitivity);
         verticalLookRotation += playerControls.Movement.LookY.ReadValue<float>() * mouseSensitivity;
         verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
@@ -224,23 +223,10 @@ public class PlayerController : MonoBehaviour
     {
         playerControls.Movement.Sprint.started += _ => moveSpeed = sprintSpeed;
         playerControls.Movement.Sprint.canceled += _ => moveSpeed = walkSpeed;
-        if (moveSpeed == sprintSpeed)
-        {
-            isSprinting = true;
-        }
-        else
-        {
-            isSprinting = false;
-        }
+        // ReSharper disable once CompareOfFloatsByEqualityOperator
+        isSprinting = moveSpeed == sprintSpeed;
         Vector3 moveDir = new Vector3((playerControls.Movement.GroundMovement.ReadValue<Vector2>().x), 0, (playerControls.Movement.GroundMovement.ReadValue<Vector2>().y)).normalized;
-        if (moveDir == new Vector3(0.00000000000f, 0.000000000000f, 0.0000000000f))
-        {
-            isMoving = false;
-        }
-        else
-        {
-            isMoving = true;
-        }
+        isMoving = moveDir != new Vector3(0.00000000000f, 0.000000000000f, 0.0000000000f);
         moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * moveSpeed, ref smoothMoveVelocity, smoothTime);
     }
     private void CheckForJumpInput()
@@ -254,6 +240,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(transform.up * jumpForce);
         }
     }
+    // ReSharper disable once InconsistentNaming
     public void SetGroundedState(bool _grounded)
     {
         grounded = _grounded;
@@ -309,7 +296,7 @@ public class PlayerController : MonoBehaviour
     }
     private void PlayFootstep(int terrain) 
     {
-        if (PlaybackState(footSteps) == FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        if (PlaybackState(footSteps) == PLAYBACK_STATE.PLAYING)
         {
             return;
         }
@@ -320,8 +307,8 @@ public class PlayerController : MonoBehaviour
     }
     private void DetermineTerrain() // This function determines what ground type the player is on
     {
-        RaycastHit[] hit;
-        hit = Physics.RaycastAll(transform.position, Vector3.down, 10.0f);
+        // ReSharper disable once Unity.PreferNonAllocApi
+        var hit = Physics.RaycastAll(transform.position, Vector3.down, 10.0f);
         foreach (RaycastHit rayHit in hit)
         {
             if (rayHit.transform.gameObject.layer == LayerMask.NameToLayer("Nonmetal"))
@@ -406,15 +393,15 @@ public class PlayerController : MonoBehaviour
     }
 
     [PunRPC]
+    // ReSharper disable once UnusedMember.Local
     private void RPC_TellMainPlayerBonusStarWasCollected(int bonusStarNumber)
     {
         Debug.Log("RPC heard");
         SaveBonusStar(bonusStarNumber);
     }
-    FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance instance) 
+    PLAYBACK_STATE PlaybackState(EventInstance instance) 
     {
-        FMOD.Studio.PLAYBACK_STATE pS;
-        instance.getPlaybackState(out pS);
+        instance.getPlaybackState(out var pS);
         return pS;
     }
 
