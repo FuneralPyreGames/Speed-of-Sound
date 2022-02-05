@@ -28,4 +28,9 @@ public class Settings : MonoBehaviour
     {
         GameObject.Find("StarTracker").GetComponent<StarTracker>().playerSensitivity = setSens;
     }
+
+    public void SetQuality(int qualityIndex)
+    {
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
 }
