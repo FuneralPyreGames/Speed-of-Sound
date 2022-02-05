@@ -122,10 +122,10 @@ MonoBehaviour:
   Path: Speed Of Sound FMOD Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637785810191979004
+  lastModified: 637796178336729486
   FileSizes:
   - Name: Desktop
-    Value: 1200
+    Value: 1240
   Exists: 1
 --- !u!114 &-4798989360942767894
 MonoBehaviour:
@@ -227,10 +227,10 @@ MonoBehaviour:
   Path: Speed Of Sound FMOD Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637785810191956377
+  lastModified: 637796178336714007
   FileSizes:
   - Name: Desktop
-    Value: 2345984
+    Value: 2346112
   Exists: 1
 --- !u!114 &-482885902845987012
 MonoBehaviour:
@@ -286,7 +286,7 @@ MonoBehaviour:
   - {fileID: -2774679474317398356}
   StringsBanks:
   - {fileID: -5101606083871586485}
-  cacheTime: 637785810191979004
+  cacheTime: 637796178336729486
   cacheVersion: 10
 --- !u!114 &1083815981285341032
 MonoBehaviour:

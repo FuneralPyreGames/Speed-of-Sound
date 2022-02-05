@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>Master Bus</value>
 		</property>
+		<relationship name="masters">
+			<destination>{36b4df92-2e7f-4cc3-b0e1-565f87a4f803}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{b06d0eac-8402-430a-9d0f-7e2ac21e3621}</destination>
 		</relationship>

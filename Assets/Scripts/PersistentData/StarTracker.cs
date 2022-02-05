@@ -13,6 +13,7 @@ public class StarTracker : MonoBehaviour
     public int soundChampionshipStarUnlockCount;
     public int testLevelStarUnlockCount;
     public int theStormStarUnlockCount;
+    public float playerSensitivity;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);

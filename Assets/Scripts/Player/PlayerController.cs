@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
         playerManager = PhotonView.Find((int)PV.InstantiationData[0]).GetComponent<PlayerManager>();
         if (PV.IsMine)
         {
+            mouseSensitivity = GameObject.Find("StarTracker").GetComponent<StarTracker>().playerSensitivity;
             if(PhotonNetwork.IsMasterClient)
             {
                 amMasterPlayer = true;
