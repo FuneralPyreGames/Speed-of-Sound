@@ -5906,6 +5906,13 @@ MonoBehaviour:
   soundChampionshipStarUnlockCount: 20
   testLevelStarUnlockCount: 25
   theStormStarUnlockCount: 45
+  fmodEvent:
+    Guid:
+      Data1: 827252471
+      Data2: 1188772592
+      Data3: 1460647332
+      Data4: 228042037
+    Path: event:/Songs/OtherMenus
 --- !u!114 &1267957287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7099,10 +7106,10 @@ RectTransform:
   m_Father: {fileID: 262595450}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 264.825, y: -73.534065}
-  m_SizeDelta: {x: 529.65, y: 147.0681}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.49999988}
 --- !u!114 &1588741244
 MonoBehaviour:
@@ -7233,10 +7240,10 @@ RectTransform:
   m_Father: {fileID: 262595450}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 809.47504, y: -73.534065}
-  m_SizeDelta: {x: 529.65, y: 147.0681}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.49999988}
 --- !u!114 &1631819275
 MonoBehaviour:

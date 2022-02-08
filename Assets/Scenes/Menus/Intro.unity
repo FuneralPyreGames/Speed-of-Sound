@@ -422,6 +422,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backToLevelSelectButton: {fileID: 2058850853}
   menuText: {fileID: 760585172}
+  fmodEvent:
+    Guid:
+      Data1: 827252471
+      Data2: 1188772592
+      Data3: 1460647332
+      Data4: 228042037
+    Path: event:/Songs/OtherMenus
 --- !u!1 &1003837614
 GameObject:
   m_ObjectHideFlags: 0

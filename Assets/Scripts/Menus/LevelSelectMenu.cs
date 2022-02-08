@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -29,12 +30,16 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
     public int testLevelStarUnlockCount = 25;
 
     public int theStormStarUnlockCount = 45;
+    public FMODUnity.EventReference fmodEvent;
+    private FMOD.Studio.EventInstance instance;
     //public PhotonView photonView;
 
     private void Awake()
     {
         if (PhotonNetwork.IsMasterClient)
         {
+            instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+            instance.start();
             starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
             starTracker.LoadStars();
             starCountInt = starTracker.GetTotalStars();
@@ -90,14 +95,20 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
     }
     public void LoadLevel1()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         PhotonNetwork.LoadLevel("Level 1 - Starting Out");
     }
     public void LoadLevel2()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         PhotonNetwork.LoadLevel("Level 2 - Through The Walls");
     }
     public void LoadLevel3()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         PhotonNetwork.LoadLevel("Level 3 - Relay Race");
     }
     public void OpenJetDivision()
@@ -122,10 +133,14 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
     }
     public void LoadLevel4()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         PhotonNetwork.LoadLevel("Level 4 - Into The Woods");
     }
     public void LoadLevel5()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         PhotonNetwork.LoadLevel("Level 5 - Beyond The Earth");
     }
     public void OpenRocketDivision()
@@ -150,11 +165,15 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
     }
     public void LoadLevel6()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         PhotonNetwork.LoadLevel("Level 6 - Super Parkour Galaxy");
     }
 
     public void LoadLevel7()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         PhotonNetwork.LoadLevel("Level 7 - Up In Space");
     }
 
@@ -182,6 +201,8 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
 
     public void LoadLevel8()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         PhotonNetwork.LoadLevel("Level 8 - The Championship");
     }
 
@@ -220,6 +241,8 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
 
     public void LoadLevel9()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         if (starCountInt < testLevelStarUnlockCount)
         {
             return;
@@ -229,6 +252,8 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
 
     public void LoadLevel10()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         if (starCountInt < theStormStarUnlockCount)
         {
             return;
@@ -237,6 +262,8 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
     }
     public void ExitGame()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         photonView.RPC("RPC_Disconnect", RpcTarget.All);
     }
     [PunRPC]

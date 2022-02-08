@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -8,16 +9,22 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviourPunCallbacks
 {
     public GameObject startGame;
+    public FMODUnity.EventReference fmodEvent;
+    private FMOD.Studio.EventInstance instance;
     //public PhotonView photonView;
     private void Awake()
     {
         if(PhotonNetwork.IsMasterClient)
         {
+            instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+            instance.start();
             LeanTween.moveLocalY(startGame, 0, 1f);
         }
     }
     public void StartEasyGame()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         LeanTween.moveLocalY(startGame, -2000, 1f);
         StarTracker starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
         starTracker.jetDivStarUnlockCount = 6;
@@ -30,6 +37,8 @@ public class StartGame : MonoBehaviourPunCallbacks
     }
     public void StartHardGame()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         LeanTween.moveLocalY(startGame, -2000, 1f);
         StarTracker starTracker = GameObject.Find("StarTracker").GetComponent<StarTracker>();
         starTracker.jetDivStarUnlockCount = 8;
@@ -48,11 +57,15 @@ public class StartGame : MonoBehaviourPunCallbacks
         {
             return;
         }
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         LeanTween.moveLocalY(startGame, -2000, 1f);
         PhotonNetwork.LoadLevel("LevelSelectMenu");
     }
     public void ExitGame()
     {
+        instance.stop(STOP_MODE.ALLOWFADEOUT);
+        instance.release();
         photonView.RPC("RPC_Disconnect", RpcTarget.All);
     }
     [PunRPC]
