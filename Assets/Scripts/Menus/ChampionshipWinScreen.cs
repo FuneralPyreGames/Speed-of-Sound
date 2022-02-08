@@ -13,7 +13,6 @@ public class ChampionshipWinScreen : MonoBehaviour
     private FMOD.Studio.EventInstance instance;
     private void Awake()
     {
-        LeanTween.moveLocalY(menuText, -412, .35f);
         switch (PhotonNetwork.IsMasterClient)
         {
             case true:
