@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3ae9e044-7b2e-4245-bd98-80b75acf8981}">
+		<property name="assetPath">
+			<value>SergeQuadrado/moment-14023.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>212.61061224489796</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7db2015e-7414-4a10-9e57-4803138c8fda}</destination>
+		</relationship>
+	</object>
+</objects>
