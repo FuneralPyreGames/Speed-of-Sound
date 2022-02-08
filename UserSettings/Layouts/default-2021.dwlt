@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 92
+  controlID: 102
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 93
+  controlID: 103
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 94
+  controlID: 104
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -320,36 +320,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Menus
+    - Assets/Resources
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Menus
+  - Assets/Resources
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Unity Projects\Speed-of-Sound
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 302}
-    m_SelectedIDs: 1e750000
-    m_LastClickedID: 29982
+    scrollPos: {x: 0, y: 242}
+    m_SelectedIDs: 0e750000
+    m_LastClickedID: 29966
     m_ExpandedIDs: 00000000b8740000ba740000bc740000be740000c0740000c2740000c4740000c674000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: ProBuilder Data
+      m_OriginalName: ProBuilder Data
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 29964
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -453,7 +453,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c0aaffffc8abffffcaaeffff86b0ffff4cb2ffff12b4ffffceb5ffff9cb7ffff60b9ffff14c4ffffdac5ffffacc7ffff98c9ffff40cbffff48cbffff5acbffffdacbffffd4d1ffffa8d6ffffb0d7ffffacdaffff6cdcffff32defffff8dfffffb4e1ffff82e3ffff46e5fffffaefffffc4f1ffff98f3ffff84f5ffff2cf7ffff34f7ffff46f7ffffc4f7fffffcfaffff82a9000080aa0000
+      m_ExpandedIDs: fcfaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 641.4123, y: 733.1884, z: 189.7854}
     speed: 2
-    m_Value: {x: 641.4123, y: 733.1884, z: 189.7854}
+    m_Value: {x: 0.41937247, y: -0.8837738, z: -0.051176447}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -754,11 +754,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.009835342, y: -0.03302847, z: -0.0016461002, w: -0.9995152}
     speed: 2
-    m_Value: {x: 0.009834256, y: -0.03302482, z: -0.0016459185, w: -0.99940485}
+    m_Value: {x: 0.1634735, y: 0.6868237, z: -0.16279364, w: 0.68923706}
   m_Size:
     m_Target: 1082.5895
     speed: 2
-    m_Value: 1082.5895
+    m_Value: 1.2247449
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -853,23 +853,23 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 1100
-      height: 522
-    m_Scale: {x: 0.48333335, y: 0.48333332}
-    m_Translation: {x: 550, y: 261}
+      height: 543
+    m_Scale: {x: 0.50277776, y: 0.50277776}
+    m_Translation: {x: 550, y: 271.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1137.931
+      x: -1093.9227
       y: -540
-      width: 2275.862
+      width: 2187.8455
       height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.48333332
+  m_defaultScale: 0.50277776
   m_LastWindowPixelSize: {x: 1100, y: 543}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c262c1329a02fa49b5cb4c297106f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 136, y: 30}
+  m_MinSize: {x: 129, y: 28}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: ProBuilder
