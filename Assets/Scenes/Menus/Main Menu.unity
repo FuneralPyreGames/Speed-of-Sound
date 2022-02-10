@@ -7313,7 +7313,7 @@ MonoBehaviour:
   soundChampionshipStarUnlockCount: 0
   testLevelStarUnlockCount: 0
   theStormStarUnlockCount: 0
-  playerSensitivity: 0
+  playerSensitivity: 0.3
 --- !u!4 &1102200937
 Transform:
   m_ObjectHideFlags: 0
