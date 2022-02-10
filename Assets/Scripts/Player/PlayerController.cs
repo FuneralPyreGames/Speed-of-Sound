@@ -276,7 +276,6 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
             }
-            Debug.Log(rb.velocity.magnitude);
         }
     }
 

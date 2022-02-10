@@ -32,6 +32,8 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
     public int theStormStarUnlockCount = 45;
     public FMODUnity.EventReference fmodEvent;
     private FMOD.Studio.EventInstance instance;
+
+    public GameObject level2BonusStarImage, level4BonusStarImage, level6BonusStarImage, level8BonusStarImage;
     //public PhotonView photonView;
 
     private void Awake()
@@ -81,6 +83,10 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
         level1StarCount.text = starTracker.level1Stars.ToString() + " Stars";
         level2StarCount.text = starTracker.level2Stars.ToString() + " Stars";
         level3StarCount.text = starTracker.level3Stars.ToString() + " Stars";
+        if (starTracker.bonusStar1Got)
+        {
+            level2BonusStarImage.SetActive(true);
+        }
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(raceCarDivision, 0, .35f);
         divisionChoice.GetComponent<CanvasGroup>().interactable = false;
@@ -119,6 +125,10 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
         }
         level4StarCount.text = starTracker.level4Stars.ToString() + " Stars";
         level5StarCount.text = starTracker.level5Stars.ToString() + " Stars";
+        if (starTracker.bonusStar2Got)
+        {
+            level4BonusStarImage.SetActive(true);
+        }
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(jetDivision, 0, .35f);
         divisionChoice.GetComponent<CanvasGroup>().interactable = false;
@@ -151,6 +161,10 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
         }
         level6StarCount.text = starTracker.level6Stars.ToString() + " Stars";
         level7StarCount.text = starTracker.level7Stars.ToString() + " Stars";
+        if (starTracker.bonusStar3Got)
+        {
+            level6BonusStarImage.SetActive(true);
+        }
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(rocketDivision, 0, .35f);
         divisionChoice.GetComponent<CanvasGroup>().interactable = false;
@@ -183,7 +197,10 @@ public class LevelSelectMenu : MonoBehaviourPunCallbacks
         {
             return;
         }
-
+        if (starTracker.bonusStar4Got)
+        {
+            level8BonusStarImage.SetActive(true);
+        }
         level8StarCount.text = starTracker.level8Stars.ToString() + " Stars";
         LeanTween.moveLocalY(divisionChoice, 1500, .35f);
         LeanTween.moveLocalX(soundChampionship, 0, .35f);
